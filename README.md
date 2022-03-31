@@ -2,7 +2,7 @@ yzLibrary
 ===================
 Author: Yizhong Zhang
 
-A header only library for easy developing graphics demos. I know nothing about lisence, but anyone can use this library.
+A template only library for easy development of OpenGL based demos.
 
 To use the library, all you need to do is to #include "yzLib/yz_lib.h" after all other necessary includes
 
