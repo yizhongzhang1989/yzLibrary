@@ -1,0 +1,6 @@
+[submodule "3rdParty/eigen"]
+	path = 3rdParty/eigen
+	url = https://gitlab.com/libeigen/eigen.git
+[submodule "deps"]
+	path = deps
+	url = https://github.com/yizhongzhang1989/yzLibraryDeps.git
