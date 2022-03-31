@@ -27,10 +27,21 @@ option(ENABLE_CUDA "Whether enable CUDA when build the project" OFF)
 ###############################################
 message(STATUS "==============================")
 
-include_directories(
-	./
-	3rdParty/inc
-	${PROJECT_BINARY_DIR} )
+
+# ---------- yzLibraryDeps ----------
+if(NOT EXISTS ${CMAKE_SOURCE_DIR}/deps/inc)
+	message(FATAL_ERROR "deps not found, update submodule to get yzLibraryDeps")
+else()
+	message(STATUS "yzLibraryDeps found as submodule")
+	include_directories(
+		${CMAKE_SOURCE_DIR}
+		${PROJECT_BINARY_DIR}
+		${CMAKE_SOURCE_DIR}/deps/inc
+		${PROJECT_BINARY_DIR} )
+	if(${MSVC}) 
+		set(BIN_PATH "${CMAKE_SOURCE_DIR}/deps/bin/win64;${CMAKE_SOURCE_DIR}/deps/bin/win32")
+	endif()
+endif()
 
 # ---------- Eigen ----------
 find_package(Eigen3 QUIET)
@@ -38,10 +49,10 @@ find_package(Eigen3 QUIET)
 if(Eigen3_FOUND)
 	message(STATUS "Eigen3 found: ${Eigen3_VERSION}")
 	set(EIGEN_FOUND TRUE)
-elseif(EXISTS ${CMAKE_SOURCE_DIR}/3rdParty/modules/eigen/Eigen)
+elseif(EXISTS ${CMAKE_SOURCE_DIR}/3rdParty/eigen/Eigen)
 	message(STATUS "Eigen found as submodule")
 	set(EIGEN_FOUND TRUE)
-	include_directories(3rdParty/modules/eigen)
+	include_directories(3rdParty/eigen)
 else()
 	message(WARNING "Eigen not found, update submodule to get Eigen")
 endif()
@@ -53,7 +64,7 @@ message(STATUS "==============================")
 # Link
 ###############################################
 if(${MSVC}) 	
-	link_directories(3rdParty/lib/win64)	
+	link_directories(${CMAKE_SOURCE_DIR}/deps/lib/win64)	
 endif()
 
 
@@ -76,12 +87,12 @@ endif()
 ###############################################
 # Config data path
 ###############################################
-set(DATA_PATH "${CMAKE_SOURCE_DIR}/examples/data")
+set(DATA_PATH "${CMAKE_SOURCE_DIR}/deps/data")
 configure_file(
 	"${CMAKE_SOURCE_DIR}/examples/data_path.h.in" 
 	"${PROJECT_BINARY_DIR}/data_path.h"
 	@ONLY)
-message(STATUS "${PROJECT_BINARY_DIR}/data_path.h created, DATA_PATH=${DATA_PATH}")
+message(STATUS "${PROJECT_BINARY_DIR}/data_path.h created,\n DATA_PATH=${DATA_PATH}")
 
 
 ###############################################

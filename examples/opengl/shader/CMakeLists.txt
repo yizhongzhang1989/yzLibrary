@@ -77,7 +77,6 @@ endif()
 # Add .user file for Visual Studio to add bin to path
 ###############################################
 if(${MSVC}) 
-	set(BIN_PATH "${CMAKE_SOURCE_DIR}/3rdParty/bin/win64;${CMAKE_SOURCE_DIR}/3rdParty/bin/win32")
 	configure_file(
 		"${CMAKE_SOURCE_DIR}/examples/vs_tmp.vcxproj.user.in" 
 		"${PROJECT_BINARY_DIR}/${example}.vcxproj.user"
