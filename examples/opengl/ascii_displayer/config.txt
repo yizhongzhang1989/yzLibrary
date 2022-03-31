@@ -1,0 +1,1 @@
+set(REQUIRE_OPENGL ON)

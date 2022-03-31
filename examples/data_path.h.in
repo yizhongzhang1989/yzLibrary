@@ -1,0 +1,6 @@
+﻿#ifndef DATA_PATH_H
+#define DATA_PATH_H
+
+const char* data_path = "@DATA_PATH@";
+
+#endif
