@@ -9,6 +9,7 @@
 #define __YZ_GEOMETRY_MESH_H__
 
 //	setting
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
 //	mesh utils (functions)
@@ -36,7 +37,7 @@
 #include "yzLib/yz_geometry/yz_offset_tri_mesh.h"
 #include "yzLib/yz_geometry/yz_mesh_texture.h"
 
-#if (defined(YZ_glut_h) || defined(YZ_freeglut_h))
+#ifdef yzLib_ENABLE_OpenGL
 #	include "yzLib/yz_geometry/yz_texture_tri_mesh.h"
 #endif
 

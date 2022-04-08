@@ -51,7 +51,7 @@
 #endif
 
 //	opengl, if gl.h is included ahead
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 #	include "yzLib/yz_opengl.h"
 #endif
 
@@ -61,7 +61,7 @@
 #endif
 
 //	windows, if windows.h is include ahead
-#ifdef YZ_windows_h
+#ifdef yzLib_ENABLE_WINDOWS
 #	include "yzLib/yz_windows.h"
 #endif
 

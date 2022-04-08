@@ -12,11 +12,8 @@
 
 #pragma  warning(disable:4996)
 
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
-
-#if !(defined(YZ_glut_h) || defined(YZ_freeglut_h) )
-#	error yz_opengl_utils.h must be included after glut.h or freeglut.h
-#endif
 
 #include <stdio.h>
 #include <assert.h>
@@ -70,7 +67,7 @@ inline int isMatrixStackFull(GLint matrix = GL_MODELVIEW){
 			glGetIntegerv(GL_TEXTURE_STACK_DEPTH, &curr_dep);
 			glGetIntegerv(GL_MAX_TEXTURE_STACK_DEPTH, &max_dep);
 			return curr_dep == max_dep;
-#ifdef YZ_glew_h
+#ifdef yzLib_ENABLE_GLEW
 		case GL_COLOR:
 			glGetIntegerv(GL_COLOR_MATRIX_STACK_DEPTH, &curr_dep);
 			glGetIntegerv(GL_MAX_COLOR_MATRIX_STACK_DEPTH, &max_dep);
@@ -114,7 +111,7 @@ inline int isClientAttributeStackFull(){
 */
 inline void pushAllAttributesAndMatrices(){
 	assert( !isMatrixStackFull(GL_PROJECTION) && !isMatrixStackFull(GL_MODELVIEW) && !isMatrixStackFull(GL_TEXTURE) );
-#ifdef YZ_glew_h
+#ifdef yzLib_ENABLE_GLEW
 	assert( !isMatrixStackFull(GL_COLOR) );
 #endif
 	assert( !isAttributeStackFull() && !isClientAttributeStackFull() );
@@ -763,7 +760,7 @@ inline void drawString(std::string str, float x=0, float y=0, float z=0){
 	glPushAttrib(GL_LIGHTING_BIT);
 	glDisable(GL_LIGHTING);
 
-#ifdef YZ_glew_h	//	able to start new line with glew
+#ifdef yzLib_ENABLE_GLEW	//	able to start new line with glew
 	int win_x, win_y;
 	getWindowCoordinate(win_x, win_y, x, y, z);
 	glWindowPos2i( win_x, win_y );

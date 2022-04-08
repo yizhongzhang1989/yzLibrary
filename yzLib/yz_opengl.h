@@ -22,17 +22,13 @@
 #include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
-#ifndef YZ_gl_h
-#	error yz_opengl.h must be included after gl.h
-#endif
-
 //	for x64 programs
 #ifdef _WIN64
 #	pragma comment(lib, "glut64.lib")
 #endif
 
 //	utils , if glut.h / freeglut.h included ahead
-#if defined(YZ_glut_h) || defined(YZ_freeglut_h)
+#ifdef yzLib_ENABLE_OpenGL
 
 #	include "yzLib/yz_opengl/yz_opengl_utils.h"
 #	include "yzLib/yz_opengl/yz_glut_window.h"
@@ -50,7 +46,7 @@
 #endif
 
 //	if glew.h included ahead
-#ifdef YZ_glew_h
+#ifdef yzLib_ENABLE_GLEW
 #	include "yzLib/yz_opengl/yz_fbo.h"
 #	include "yzLib/yz_opengl/yz_vbo.h"
 #	include "yzLib/yz_opengl/yz_shader.h"

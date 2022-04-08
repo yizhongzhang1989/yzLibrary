@@ -45,6 +45,7 @@ option(yzLib_ENABLE_WINDOWS		"Whether Enable Windows in yzLib"		OFF)
 option(yzLib_ENABLE_Eigen		"Whether Enable EIGEN in yzLib"			OFF)
 option(yzLib_ENABLE_MKL			"Whether Enable MKL in yzLib"			OFF)
 option(yzLib_ENABLE_OpenGL		"Whether Enable OpenGL in yzLib"		OFF)
+option(yzLib_ENABLE_GLEW		"Whether Enable GLEW in yzLib"			OFF)
 option(yzLib_ENABLE_FreeImage	"Whether Enable FreeImage in yzLib"		OFF)
 option(yzLib_ENABLE_CUDA		"Whether Enable CUDA in yzLib"			OFF)
 

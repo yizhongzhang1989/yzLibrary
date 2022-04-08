@@ -11,15 +11,12 @@
 #ifndef __YZ_IMAGE_RW_FREEIMAGE_H__
 #define __YZ_IMAGE_RW_FREEIMAGE_H__
 
-#ifndef YZ_FreeImage_h
-#	error yz_image_rw_freeimage.h must be included after FreeImage.h
-#endif
-
 #include <io.h>
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <algorithm>
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_math/yz_numerical_utils.h"
 #include "yzLib/yz_utils/yz_string_utils.h"
 
@@ -62,7 +59,7 @@ inline int readImageFromFile(const char* image_file_name, unsigned char* &image_
 	//	If user included FreeImage.h not modified by Yizhong, then _WINDOWS_ macro
 	//	is introduced without including <windows.h> which will cause mistake.
 	//	This problem is not solved, just print error information
-#	ifdef YZ_windows_h
+#	ifdef yzLib_ENABLE_WINDOWS
 #		ifndef _INC_WINDOWS
 #			error	_WINDOWS_ introduced by FreeImage.h without include <windows.h>, \
 					fix this by include <windows.h> before FreeImage.h. \

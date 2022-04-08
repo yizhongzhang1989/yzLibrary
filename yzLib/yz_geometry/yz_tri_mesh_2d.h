@@ -19,7 +19,7 @@
 #include "yzLib/yz_geometry/yz_mesh_rw.h"
 #include "yzLib/yz_geometry/yz_mesh_topology.h"
 
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 #	include "yzLib/yz_opengl/yz_vector_opengl_utils.h"		//	include this file for display mesh
 #endif
 
@@ -85,7 +85,7 @@ public:
 		Draw mesh edge
 	*/
 	inline int Display(int shading_mode=0){
-		#ifdef YZ_gl_h
+		#ifdef yzLib_ENABLE_OpenGL
 		opengl::drawMeshEdgeFromFace2D(vertex, face);
 			return 1;
 		#else

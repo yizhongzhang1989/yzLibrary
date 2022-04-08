@@ -8,11 +8,8 @@
 #ifndef __YZ_TEXTURE_H__
 #define __YZ_TEXTURE_H__
 
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
-
-#if !(defined(YZ_glut_h) || defined(YZ_freeglut_h))
-#	error yz_texture.h must be included after glut.h or freeglut.h
-#endif
 
 
 namespace yz{	namespace opengl{
@@ -66,7 +63,7 @@ public:
 		glBindTexture( GL_TEXTURE_2D, tex_id );
 		glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
 		glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
-		#ifdef YZ_glew_h
+		#ifdef yzLib_ENABLE_GLEW
 			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 		#endif

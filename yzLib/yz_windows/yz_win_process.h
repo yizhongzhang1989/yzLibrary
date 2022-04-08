@@ -13,11 +13,8 @@
 #ifndef __YZ_WIN_PROCESS_H__
 #define __YZ_WIN_PROCESS_H__
 
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
-
-#ifndef YZ_windows_h
-#	error yz_win_process.h must be included after windows.h
-#endif
 
 #include <iostream>
 #include "yzLib/yz_windows/yz_win_utils.h"

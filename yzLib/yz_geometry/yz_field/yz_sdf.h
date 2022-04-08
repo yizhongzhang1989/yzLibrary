@@ -236,7 +236,7 @@ public:
 		Draw the distance field
 	*/
 	void DrawVolume(){
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 		if (dim.x && dim.y && dim.z) {	//	don't draw empty volume
 			Vec3<T> xyz1 = xyz0 + (dim - Vec3ui(1, 1, 1)) * voxel_size;
 			opengl::drawAABBWire(xyz0, xyz1);
@@ -256,7 +256,7 @@ public:
 		\param	max_color_scale		red color value with respect to voxel_size
 	*/
 	void DrawSlice(int dim_id, int slice_id, T min_color_scale = 3, T max_color_scale = 3) {
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 		if (dim_id < 0 || dim_id > 2 || slice_id < 0 || slice_id >= dim[dim_id])	//	dimension and slice id must be legal
 			return;
 		if (dim[(dim_id + 1) % 3] < 2 || dim[(dim_id + 2) % 3] < 2)	//	at least 4 points are required to draw the slice

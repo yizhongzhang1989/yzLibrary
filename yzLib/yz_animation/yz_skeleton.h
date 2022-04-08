@@ -14,7 +14,7 @@
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_math/yz_matrix.h"
 #include "yzLib/yz_math/yz_quaternion.h"
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 #	include "yzLib/yz_opengl/yz_animation_opengl_utils.h"
 #endif
 
@@ -77,7 +77,7 @@ public:
 		\return					whether display succeed
 	*/
 	inline int Display(int display_mode=0, float stick_radius=0.01f) const{
-		#ifdef YZ_gl_h
+		#ifdef yzLib_ENABLE_OpenGL
 			if( display_mode == 0 ){
 				opengl::drawSkeletonAsSticks(*this, stick_radius);
 			}

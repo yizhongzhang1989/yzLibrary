@@ -20,11 +20,8 @@
 #ifndef __YZ_GLUT_WINDOW_H__
 #define __YZ_GLUT_WINDOW_H__
 
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
-
-#if !(defined(YZ_glut_h) || defined(YZ_freeglut_h) )
-#	error yz_demo_window.h must be included after glut.h or freeglut.h
-#endif
 
 #include <assert.h>
 #include <vector>
@@ -490,7 +487,7 @@ public:
 		glutInitWindowSize(this->win_width, this->win_height);
 		this->win_id = glutCreateWindow("3D Window");
 
-		#ifdef YZ_glew_h
+		#ifdef yzLib_ENABLE_GLEW
 			if( glewInit() != GLEW_OK ){
 				std::cout << "Init glew failed calling CreateGLUTWindow3D() of ID: " << ID << std::endl;
 				exit(0);
@@ -1063,7 +1060,7 @@ public:
 		glutInitWindowSize(this->win_width, this->win_height);
 		this->win_id = glutCreateWindow("2D Window");
 
-		#ifdef YZ_glew_h
+		#ifdef yzLib_ENABLE_GLEW
 			if( glewInit() != GLEW_OK ){
 				std::cout << "Init glew failed calling CreateGLUTWindow3D() of ID: " << ID << std::endl;
 				exit(0);

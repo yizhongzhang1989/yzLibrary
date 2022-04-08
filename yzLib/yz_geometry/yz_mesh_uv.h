@@ -12,6 +12,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_geometry/yz_mesh_utils.h"
@@ -65,7 +66,7 @@ public:
 		draw patch UV
 	*/
 	void Draw2D() {
-#ifdef YZ_glut_h
+#ifdef yzLib_ENABLE_OpenGL
 		glColor3f(0, 0, 1);
 		yz::opengl::drawMeshEdgeFromFace2D(tex_coord, face);
 #else
@@ -483,7 +484,7 @@ public:
 
 public:		//	display related functions
 	void Draw3D(double seam_radius = 0.01) {
-#ifdef YZ_glut_h
+#ifdef yzLib_ENABLE_OpenGL
 		//	draw the mesh
 		if (face_label.empty()) {	//	if the face is not labeled, just draw the mesh
 			glColor3f(1, 1, 1);
@@ -518,7 +519,7 @@ public:		//	display related functions
 	}
 
 	void Draw2D() {
-#ifdef YZ_glut_h
+#ifdef yzLib_ENABLE_OpenGL
 		if (tex_coord.empty() || tex_face.empty())
 			return;
 
@@ -547,7 +548,7 @@ public:		//	display related functions
 	}
 
 	void PickingDraw2D() {
-#ifdef YZ_glut_h
+#ifdef yzLib_ENABLE_OpenGL
 		if (tex_coord.empty() || tex_face.empty() || face_label.empty())
 			return;
 

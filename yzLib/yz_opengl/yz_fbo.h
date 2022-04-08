@@ -11,10 +11,6 @@
 
 #include "yzLib/yz_setting.h"
 
-#ifndef YZ_glew_h
-#	error yz_fbo.h must be included after glew.h
-#endif
-
 #include <iostream>
 
 namespace yz{	namespace opengl{

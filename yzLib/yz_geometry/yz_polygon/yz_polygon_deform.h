@@ -16,7 +16,7 @@
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_utils/yz_color_bar.h"
 
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 #	include "yzLib/yz_opengl/yz_vector_opengl_utils.h"		//	include this file for display mesh
 #endif
 
@@ -116,7 +116,7 @@ public:
 		Draw the polygon, with color indicating error
 	*/
 	void Draw() {
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 		//	get min length
 		double min_len = target_length[0];
 		for (int i = 1; i < target_length.size(); i++)

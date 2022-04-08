@@ -17,7 +17,7 @@
 #include "yzLib/yz_geometry/yz_mesh_rw.h"
 #include "yzLib/yz_geometry/yz_mesh_topology.h"
 
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 #	include "yzLib/yz_opengl/yz_vector_opengl_utils.h"		//	include this file for display mesh
 #endif
 
@@ -141,7 +141,7 @@ public:
 	virtual int DisplayFlat(int force_refresh_flag = 0) {
 		if (vertex.empty() || face.empty())
 			return 1;
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 		if (disp_split_vertex.size() != face.size() * 4)
 			force_refresh_flag = 1;
 		if (disp_split_vertex_normal.size() != face.size() * 4)
@@ -187,7 +187,7 @@ public:
 	virtual int DisplaySmooth() {
 		if (vertex.empty() || face.empty())
 			return 1;
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 		if (vertex_normal.size() != vertex.size())
 			CalculateVertexNormal();
 

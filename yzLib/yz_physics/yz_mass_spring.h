@@ -36,7 +36,7 @@ public:
 
 public:
 	void Draw() {
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 		glColor3f(1, 1, 1);
 		for (int i = 0; i < x.size(); i++)
 			yz::opengl::drawPointAsCube(x[i], 0.1);

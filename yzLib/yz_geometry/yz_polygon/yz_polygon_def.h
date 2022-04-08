@@ -15,7 +15,7 @@
 #include "yzLib/yz_setting.h"
 #include "yzLib/yz_math/yz_vector.h"
 
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 #	include "yzLib/yz_opengl/yz_vector_opengl_utils.h"		//	include this file for display mesh
 #endif
 
@@ -46,7 +46,7 @@ public:
 		Draw the polygon
 	*/
 	inline int Display(int shading_mode=0){
-		#ifdef YZ_gl_h
+		#ifdef yzLib_ENABLE_OpenGL
 			opengl::drawMeshEdge2D(vertex, edge);
 			return 1;
 		#else

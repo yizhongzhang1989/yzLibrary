@@ -14,7 +14,7 @@
 #include "yzLib/yz_setting.h"
 #include "yzLib/yz_geometry/yz_bonding_box.h"
 
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 #	include "yzLib/yz_opengl/yz_vector_opengl_utils.h"		//	include this file for display AABB Tree
 #endif
 
@@ -304,7 +304,7 @@ public:
 	\param	depth	the depth of node to display, 0: root
 	*/
 	inline int Display(int depth = 0) {
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 		DisplayWithDepth(leaf_number, depth);
 		return 1;
 #else
@@ -427,7 +427,7 @@ protected:
 	\param	depth		current depth to draw
 	*/
 	inline void DisplayWithDepth(int node_id, int depth) {
-#ifdef YZ_gl_h
+#ifdef yzLib_ENABLE_OpenGL
 		if (node_id < 0 || node_id >= node.size() || depth < 0)		//	input must be legal
 			return;
 

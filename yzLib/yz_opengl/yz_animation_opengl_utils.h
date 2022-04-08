@@ -8,11 +8,8 @@
 #ifndef __YZ_ANIMATION_OPENGL_UTILS_H__
 #define __YZ_ANIMATION_OPENGL_UTILS_H__
 
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
-
-#if !(	defined(YZ_glut_h) || defined(YZ_freeglut_h) )
-#	error yz_animation_opengl_utils.h must be included after glut.h or freeglut.h
-#endif
 
 #include <vector>
 #include <math.h>

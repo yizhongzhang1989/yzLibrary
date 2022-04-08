@@ -47,7 +47,7 @@ namespace yz{ namespace utils{
 							the return value is assumed to be the correct bits per pixel value
 */
 inline int readImageFromFile(const char* image_file_name, unsigned char* &image_ptr, int& width, int& height, int target_bpp=0){
-#ifndef YZ_FreeImage_h
+#ifndef yzLib_ENABLE_FreeImage
 	return yz::image::readBmpFromFile(image_file_name, image_ptr, width, height);
 #else					//	read using API provided by FreeImage
 	return yz::image::readImageFromFile(image_file_name, image_ptr, width, height, target_bpp);
@@ -105,7 +105,7 @@ inline int writeImageToFile(const char* image_file_name, unsigned char* image_pt
 			<< "write file failed" << std::endl;
 		return 0;
 	}
-#ifndef YZ_FreeImage_h	//	without FreeImage, we can only read .bmp file
+#ifndef yzLib_ENABLE_FreeImage	//	without FreeImage, we can only read .bmp file
 	return yz::image::writeBmpToFile(image_file_name, image_ptr, width, height, bpp);
 #else
 	return yz::image::writeImageToFile(image_file_name, image_ptr, width, height, bpp);

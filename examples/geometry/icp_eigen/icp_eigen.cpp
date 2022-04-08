@@ -8,6 +8,7 @@
 */
 /***********************************************************/
 #include <iostream>
+#include <GL/glew.h>
 #include <GL/glut.h>
 #include <Eigen/Dense>	//	include Eigen before yzLib, so that icp will use Eigen
 #include "yzLib/yz_lib.h"

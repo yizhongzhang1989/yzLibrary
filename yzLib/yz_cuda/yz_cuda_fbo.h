@@ -20,12 +20,6 @@
 #ifndef YZ_cuda_gl_interop_h
 #	error yz_cuda_opengl.h must be included after cuda_gl_interop.h
 #endif
-#ifndef	YZ_gl_h
-#	error yz_cuda_opengl.h must be included after gl.h
-#endif
-#ifndef YZ_glew_h
-#	error yz_cuda_opengl.h must be included after glew.h
-#endif
 
 #include <iostream>
 #include "yzLib/yz_opengl/yz_fbo.h"

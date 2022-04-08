@@ -8,18 +8,13 @@
 #ifndef __YZ_MICROSOFT_KINECT_H__
 #define __YZ_MICROSOFT_KINECT_H__
 
-#ifndef YZ_NuiApi_h
-#	error yz_microsoft_kinect.h must be included after NuiApi.h
-#endif
-#ifndef YZ_windows_h	//	windows is used since the sdk is developed by microsoft
-#	error yz_microsoft_kinect.h must be included after windows.h
-#endif
 
 #pragma comment(lib, "Kinect10.lib")
 
 #include <iostream>
 #include <vector>
 #include <math.h>
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_kinect/yz_kinect_base.h"
 

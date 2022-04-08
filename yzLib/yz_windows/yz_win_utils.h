@@ -8,11 +8,8 @@
 #ifndef __YZ_WIN_UTILS_H__
 #define __YZ_WIN_UTILS_H__
 
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
-
-#ifndef YZ_windows_h
-#	error yz_win_process.h must be included after windows.h
-#endif
 
 #include <iostream>
 #include "yzLib/yz_utils/yz_timer.h"
