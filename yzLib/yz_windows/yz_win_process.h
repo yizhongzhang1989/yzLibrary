@@ -16,6 +16,7 @@
 #include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
+#include <Windows.h>
 #include <iostream>
 #include "yzLib/yz_windows/yz_win_utils.h"
 

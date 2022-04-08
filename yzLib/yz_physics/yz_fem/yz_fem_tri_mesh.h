@@ -16,7 +16,7 @@
 #include "yzLib/yz_geometry/yz_tri_mesh.h"
 #include "yzLib/yz_geometry/yz_mesh_topology.h"
 #include "yzLib/yz_physics/yz_physics_base.h"
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 #	include "yzLib/yz_opengl/yz_opengl_utils.h"
 #	include "yzLib/yz_opengl/yz_vector_opengl_utils.h"
 #endif
@@ -203,7 +203,7 @@ public:
 		Draw the system as a mesh
 	*/
 	virtual inline void Draw(){
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 		glColor3f(1, 1, 1);
 		this->DisplayFlat();
 
@@ -235,7 +235,7 @@ public:
 	}
 
 	virtual inline void DrawVonMisesStress(T min_color_val = 1.0, T max_color_val = 2.0){
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 		if (!CalculateVonMises())
 			return;
 
@@ -264,7 +264,7 @@ public:
 	}
 
 	virtual inline void DrawGravity(){
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 		glColor3f(1, 0, 1);
 		for (int i = 0; i < vertex.size(); i++){
 			yz::opengl::drawArrow(vertex[i], vertex[i] + G[i]*1000, 0.001);
@@ -276,7 +276,7 @@ public:
 	}
 
 	virtual inline void PickingDraw(){
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 		for (int i = 0; i < vertex.size(); i++){
 			opengl::setPickingIndex(i);
 			opengl::drawPointAsSphere(vertex[i], 0.05);

@@ -17,7 +17,7 @@
 #include "yzLib/yz_geometry/yz_mesh_normal.h"
 #include "yzLib/yz_geometry/yz_tri_mesh.h"
 
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 #	include "yzLib/yz_opengl/yz_vector_opengl_utils.h"		//	include this file for display mesh
 #endif
 

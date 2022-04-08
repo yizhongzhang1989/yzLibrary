@@ -12,7 +12,7 @@
 #cmakedefine yzLib_ENABLE_WINDOWS
 #cmakedefine yzLib_ENABLE_Eigen
 #cmakedefine yzLib_ENABLE_MKL
-#cmakedefine yzLib_ENABLE_OpenGL
+#cmakedefine yzLib_ENABLE_GLUT
 #cmakedefine yzLib_ENABLE_GLEW
 #cmakedefine yzLib_ENABLE_FreeImage
 #cmakedefine yzLib_ENABLE_CUDA

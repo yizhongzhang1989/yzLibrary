@@ -66,7 +66,7 @@ public:
 		draw patch UV
 	*/
 	void Draw2D() {
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 		glColor3f(0, 0, 1);
 		yz::opengl::drawMeshEdgeFromFace2D(tex_coord, face);
 #else
@@ -484,7 +484,7 @@ public:
 
 public:		//	display related functions
 	void Draw3D(double seam_radius = 0.01) {
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 		//	draw the mesh
 		if (face_label.empty()) {	//	if the face is not labeled, just draw the mesh
 			glColor3f(1, 1, 1);
@@ -519,7 +519,7 @@ public:		//	display related functions
 	}
 
 	void Draw2D() {
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 		if (tex_coord.empty() || tex_face.empty())
 			return;
 
@@ -548,7 +548,7 @@ public:		//	display related functions
 	}
 
 	void PickingDraw2D() {
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 		if (tex_coord.empty() || tex_face.empty() || face_label.empty())
 			return;
 

@@ -23,6 +23,7 @@
 #include <sstream>
 #include <math.h>
 #include <stdarg.h>
+#include "GL/glut.h"
 #include "yzLib/yz_math/yz_lookup_table.h"
 #include "yzLib/yz_math/yz_numerical_utils.h"
 

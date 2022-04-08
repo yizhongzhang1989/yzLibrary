@@ -1678,7 +1678,7 @@ public:
 		If openGL is not included, this function will not work properly
 	*/
 	void Display() {
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 		if (!vertex_ptr || !face_ptr)
 			return;
 

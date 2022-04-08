@@ -20,8 +20,10 @@
 #include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
+#include <iostream>
 #include <vector>
 #include <math.h>
+#include "GL/glut.h"
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_math/yz_interpolation.h"
 #include "yzLib/yz_opengl/yz_opengl_utils.h"

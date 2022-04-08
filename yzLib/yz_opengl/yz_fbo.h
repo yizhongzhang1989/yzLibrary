@@ -9,9 +9,12 @@
 #ifndef __YZ_FBO_H__
 #define __YZ_FBO_H__
 
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
 #include <iostream>
+#include "GL/glew.h"
+#include "GL/glut.h"
 
 namespace yz{	namespace opengl{
 

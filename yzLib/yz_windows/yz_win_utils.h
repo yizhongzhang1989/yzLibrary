@@ -11,6 +11,7 @@
 #include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
+#include <Windows.h>
 #include <iostream>
 #include "yzLib/yz_utils/yz_timer.h"
 

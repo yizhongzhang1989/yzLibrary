@@ -11,8 +11,10 @@
 #include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
+#include <iostream>
 #include <vector>
 #include <math.h>
+#include "GL/glut.h"
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_animation/yz_skeleton.h"
 #include "yzLib/yz_animation/yz_skeleton_utils.h"

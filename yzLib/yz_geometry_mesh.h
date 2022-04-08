@@ -37,7 +37,7 @@
 #include "yzLib/yz_geometry/yz_offset_tri_mesh.h"
 #include "yzLib/yz_geometry/yz_mesh_texture.h"
 
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 #	include "yzLib/yz_geometry/yz_texture_tri_mesh.h"
 #endif
 

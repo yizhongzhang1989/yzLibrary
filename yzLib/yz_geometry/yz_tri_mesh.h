@@ -19,7 +19,7 @@
 #include "yzLib/yz_geometry/yz_mesh_rw.h"
 #include "yzLib/yz_geometry/yz_mesh_normal.h"
 
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 #	include "yzLib/yz_opengl/yz_vector_opengl_utils.h"		//	include this file for display mesh
 #endif
 
@@ -187,7 +187,7 @@ public:
 	}
 
 	virtual inline int Display(int display_mode=0) const{
-		#ifdef yzLib_ENABLE_OpenGL
+		#ifdef yzLib_ENABLE_GLUT
 			opengl::drawFlatShadingTriMesh(vertex, face, face_normal);
 			return 1;
 		#else
@@ -239,7 +239,7 @@ public:
 	}
 
 	virtual inline int Display(int display_mode=0){
-		#ifdef yzLib_ENABLE_OpenGL
+		#ifdef yzLib_ENABLE_GLUT
 			opengl::drawSmoothShadingTriMesh(vertex, face, vertex_normal);
 			return 1;
 		#else
@@ -292,7 +292,7 @@ public:
 	}
 
 	virtual inline int Display(int display_mode= 0x1D01){	//	default value: GL_SMOOTH
-		#ifdef yzLib_ENABLE_OpenGL
+		#ifdef yzLib_ENABLE_GLUT
 			if( display_mode == GL_SMOOTH )
 				SmoothShadingTriMesh<T>::Display(display_mode);
 			else if( display_mode == GL_FLAT )
@@ -321,7 +321,7 @@ public:
 	}
 
 	inline int DisplayFlat() const{
-		#ifdef yzLib_ENABLE_OpenGL
+		#ifdef yzLib_ENABLE_GLUT
 			opengl::drawFlatShadingTriMesh(vertex, face, face_normal);
 			return 1;
 		#else
@@ -380,7 +380,7 @@ public:
 	}
 
 	virtual inline int Display(int display_mode=0) const{
-		#ifdef yzLib_ENABLE_OpenGL
+		#ifdef yzLib_ENABLE_GLUT
 			if( display_mode == GL_SMOOTH )
 				CalculateVertexNormal();
 			else if( display_mode == GL_FLAT )

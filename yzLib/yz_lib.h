@@ -51,7 +51,7 @@
 #endif
 
 //	opengl, if gl.h is included ahead
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 #	include "yzLib/yz_opengl.h"
 #endif
 

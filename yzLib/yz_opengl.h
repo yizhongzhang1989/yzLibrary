@@ -27,8 +27,16 @@
 #	pragma comment(lib, "glut64.lib")
 #endif
 
+//	if glew.h included ahead
+#ifdef yzLib_ENABLE_GLEW
+#	include "yzLib/yz_opengl/yz_fbo.h"
+#	include "yzLib/yz_opengl/yz_vbo.h"
+#	include "yzLib/yz_opengl/yz_shader.h"
+#endif
+
+
 //	utils , if glut.h / freeglut.h included ahead
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 
 #	include "yzLib/yz_opengl/yz_opengl_utils.h"
 #	include "yzLib/yz_opengl/yz_glut_window.h"
@@ -43,13 +51,6 @@
 #		include "yzLib/yz_opengl/yz_vector_opengl_utils.h"
 #	endif
 
-#endif
-
-//	if glew.h included ahead
-#ifdef yzLib_ENABLE_GLEW
-#	include "yzLib/yz_opengl/yz_fbo.h"
-#	include "yzLib/yz_opengl/yz_vbo.h"
-#	include "yzLib/yz_opengl/yz_shader.h"
 #endif
 
 

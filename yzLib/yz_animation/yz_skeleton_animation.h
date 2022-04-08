@@ -14,7 +14,7 @@
 #include "yzLib/yz_animation/yz_skeleton.h"
 #include "yzLib/yz_animation/yz_skeleton_utils.h"
 
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 #	include "yzLib/yz_opengl/yz_animation_opengl_utils.h"	//	to display the skeleton
 #endif
 

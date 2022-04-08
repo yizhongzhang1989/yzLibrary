@@ -15,7 +15,7 @@
 #include "yzLib/yz_setting.h"
 #include "yzLib/yz_math/yz_vector.h"
 
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 #	include "yzLib/yz_opengl/yz_vector_opengl_utils.h"		//	include this file for display mesh
 #endif
 
@@ -98,7 +98,7 @@ public:
 	Draw the polygon, with color indicating error
 	*/
 	void Draw() {
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 		glColor3f(0, 0, 1);
 		opengl::drawMeshEdgeFromFace2D(vertex, face);
 #else

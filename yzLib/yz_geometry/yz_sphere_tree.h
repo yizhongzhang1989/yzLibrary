@@ -19,7 +19,7 @@
 #include "yzLib/yz_geometry/yz_sphere.h"
 #include "yzLib/yz_utils/yz_string_utils.h"
 
-#ifdef yzLib_ENABLE_OpenGL
+#ifdef yzLib_ENABLE_GLUT
 #	include "yzLib/yz_opengl/yz_vector_opengl_utils.h"	
 #endif
 
@@ -158,7 +158,7 @@ public:
 							3: all random color
 	*/
 	int Display(int depth=0, int shape_mode=0, int color_mode=0){
-		#ifdef yzLib_ENABLE_OpenGL
+		#ifdef yzLib_ENABLE_GLUT
 			if( depth<0 || depth>tree_depth )
 				return 1;
 

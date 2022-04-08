@@ -11,6 +11,8 @@
 #include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
+#include <iostream>
+#include "GL/glut.h"
 
 namespace yz{	namespace opengl{
 

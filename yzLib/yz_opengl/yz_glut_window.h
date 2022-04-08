@@ -27,6 +27,7 @@
 #include <vector>
 #include <iostream>
 #include <iomanip>
+#include "GL/glut.h"
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_math/yz_matrix.h"
 #include "yzLib/yz_opengl/yz_opengl_utils.h"
