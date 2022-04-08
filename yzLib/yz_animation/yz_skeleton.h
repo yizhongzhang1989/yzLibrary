@@ -10,6 +10,7 @@
 
 #include <vector>
 #include <string>
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_math/yz_matrix.h"
 #include "yzLib/yz_math/yz_quaternion.h"

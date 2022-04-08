@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <vector>
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 #include "yzLib/yz_geometry/yz_bonding_box.h"
 

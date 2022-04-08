@@ -9,6 +9,8 @@
 #ifndef __YZ_POINT_POINT_H__
 #define __YZ_POINT_POINT_H__
 
+#include "yzLib/yzLib_config.h"
+
 namespace yz {	namespace geometry {	namespace icp {
 
 /**
@@ -58,7 +60,7 @@ int calculateTransformPointToPoint(
 	}
 
 	//	perform SVD to remove scale and screw 
-#ifdef YZ_eigen_dense_h
+#ifdef yzLib_ENABLE_Eigen
 	Eigen::Matrix<double, 3, 3, Eigen::RowMajor> A;
 	for (int i = 0; i < 9; i++)
 		A.data()[i] = Rot[0][i];
@@ -139,7 +141,7 @@ int calculateTransformPointToPoint(
 	}
 
 	//	perform SVD to remove scale and screw 
-#ifdef YZ_eigen_dense_h
+#ifdef yzLib_ENABLE_Eigen
 	Eigen::Matrix<double, 3, 3, Eigen::RowMajor> A;
 	for (int i = 0; i < 9; i++)
 		A.data()[i] = Rot[0][i];

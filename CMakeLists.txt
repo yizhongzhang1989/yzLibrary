@@ -3,7 +3,6 @@ cmake_minimum_required (VERSION 3.2)
 message("This CMakeList.txt is written for 64bit system only")
 
 project (yzLibExamples LANGUAGES CXX)
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 if(${MSVC}) 
 	message(STATUS "Build with MSVC")
@@ -15,18 +14,39 @@ endif()
 
 
 ###############################################
-# Options
+# Settings
 ###############################################
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+add_definitions(-DUNICODE -D_UNICODE)
+
+if(NOT CMAKE_BUILD_TYPE) 
+	set(CMAKE_BUILD_TYPE Release)
+endif() 
+set(CMAKE_DEBUG_POSTFIX "d")
+
+if(${MSVC}) 
+	SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE  ${PROJECT_BINARY_DIR}/bin/Release)
+	SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG  ${PROJECT_BINARY_DIR}/bin/Debug)
+	SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE  ${PROJECT_BINARY_DIR}/bin/Release)
+	SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG  ${PROJECT_BINARY_DIR}/bin/Debug)
+endif()
+
+
+###############################################
+# Options and config
+###############################################
+include(yzLib/yzLib.cmake)
+yzLib_set_ENABLE(OpenGL ON)
+
 option(ENABLE_OPENGL "Whether enable OpenGL when build the project" ON)
 option(ENABLE_GLEW "Whether enable GLEW when build the project" ON)
 option(ENABLE_MKL "Whether enable MKL when build the project" OFF)
 option(ENABLE_CUDA "Whether enable CUDA when build the project" OFF)
 
 ###############################################
-# Dependency
+# Subdirectory and dependency
 ###############################################
 message(STATUS "==============================")
-
 
 # ---------- yzLibraryDeps ----------
 if(NOT EXISTS ${CMAKE_SOURCE_DIR}/deps/inc)
@@ -52,6 +72,7 @@ if(Eigen3_FOUND)
 elseif(EXISTS ${CMAKE_SOURCE_DIR}/3rdParty/eigen/Eigen)
 	message(STATUS "Eigen found as submodule")
 	set(EIGEN_FOUND TRUE)
+	yzLib_set_ENABLE(Eigen ON)
 	include_directories(3rdParty/eigen)
 else()
 	message(WARNING "Eigen not found, update submodule to get Eigen")
@@ -59,28 +80,14 @@ endif()
 
 message(STATUS "==============================")
 
+yzLib_Print_Info()
+
 
 ###############################################
 # Link
 ###############################################
 if(${MSVC}) 	
 	link_directories(${CMAKE_SOURCE_DIR}/deps/lib/win64)	
-endif()
-
-
-###############################################
-# Output
-###############################################
-if(NOT CMAKE_BUILD_TYPE) 
-	set(CMAKE_BUILD_TYPE Release)
-endif() 
-set(CMAKE_DEBUG_POSTFIX "d")
-
-if(${MSVC}) 
-	SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE  ${PROJECT_BINARY_DIR}/bin/Release)
-	SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG  ${PROJECT_BINARY_DIR}/bin/Debug)
-	SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE  ${PROJECT_BINARY_DIR}/bin/Release)
-	SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG  ${PROJECT_BINARY_DIR}/bin/Debug)
 endif()
 
 
@@ -96,7 +103,7 @@ message(STATUS "${PROJECT_BINARY_DIR}/data_path.h created,\n DATA_PATH=${DATA_PA
 
 
 ###############################################
-# Projects
+# Example Projects
 ###############################################
 macro(SUBDIRLIST result curdir)
 	file(GLOB children RELATIVE ${curdir} ${curdir}/*)

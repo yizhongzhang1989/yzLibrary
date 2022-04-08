@@ -19,6 +19,7 @@
 #define __YZ_OPENGL_H__
 
 //	setting
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
 #ifndef YZ_gl_h

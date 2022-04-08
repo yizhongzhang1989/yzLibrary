@@ -9,6 +9,7 @@
 #define __YZ_SKELETON_ANIMATION_H__
 
 #include <iostream>
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 #include "yzLib/yz_animation/yz_skeleton.h"
 #include "yzLib/yz_animation/yz_skeleton_utils.h"

@@ -1,0 +1,19 @@
+/***********************************************************/
+/**	\file
+	\brief		Config of yzLib
+	\details	
+	\author		Yizhong Zhang
+	\date		4/8/2022
+*/
+/***********************************************************/
+#ifndef __YZ_CONFIG_H__
+#define __YZ_CONFIG_H__
+
+#cmakedefine yzLib_ENABLE_WINDOWS
+#cmakedefine yzLib_ENABLE_Eigen
+#cmakedefine yzLib_ENABLE_MKL
+#cmakedefine yzLib_ENABLE_OpenGL
+#cmakedefine yzLib_ENABLE_FreeImage
+#cmakedefine yzLib_ENABLE_CUDA
+
+#endif	//	__YZ_CONFIG_H__

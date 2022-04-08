@@ -17,6 +17,9 @@
 #ifndef __YZ_LIB_H__
 #define __YZ_LIB_H__
 
+//	config
+#include "yzLib/yzLib_config.h"
+
 //	setting
 #include "yzLib/yz_setting.h"
 

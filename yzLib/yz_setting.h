@@ -11,6 +11,7 @@
 #ifndef __YZ_SETTING_H__
 #define __YZ_SETTING_H__
 
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_3rd_header_macro.h"
 
 /**

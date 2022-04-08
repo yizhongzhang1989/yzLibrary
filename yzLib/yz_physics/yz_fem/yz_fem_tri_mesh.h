@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <math.h>
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_geometry/yz_tri_mesh.h"
 #include "yzLib/yz_geometry/yz_mesh_topology.h"

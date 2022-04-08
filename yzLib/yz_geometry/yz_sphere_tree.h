@@ -13,6 +13,7 @@
 #include <vector>
 #include <math.h>
 #include <algorithm>
+#include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 #include "yzLib/yz_math/yz_numerical_utils.h"
 #include "yzLib/yz_geometry/yz_sphere.h"
