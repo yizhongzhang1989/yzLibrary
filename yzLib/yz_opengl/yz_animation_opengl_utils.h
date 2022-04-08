@@ -14,6 +14,9 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
+#ifdef yzLib_ENABLE_GLEW
+#	include "GL/glew.h"
+#endif
 #include "GL/glut.h"
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_animation/yz_skeleton.h"

@@ -11,6 +11,9 @@
 #include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 #include <iostream>
+#ifdef yzLib_ENABLE_GLEW
+#	include "GL/glew.h"
+#endif
 #include "GL/glut.h"
 
 #include "yzLib/yz_math/yz_vector.h"

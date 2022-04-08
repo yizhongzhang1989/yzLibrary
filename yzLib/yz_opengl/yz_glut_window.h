@@ -27,6 +27,9 @@
 #include <vector>
 #include <iostream>
 #include <iomanip>
+#ifdef yzLib_ENABLE_GLEW
+#	include "GL/glew.h"
+#endif
 #include "GL/glut.h"
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_math/yz_matrix.h"

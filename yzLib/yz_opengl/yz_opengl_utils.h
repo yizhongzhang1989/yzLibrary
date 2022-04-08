@@ -23,6 +23,9 @@
 #include <sstream>
 #include <math.h>
 #include <stdarg.h>
+#ifdef yzLib_ENABLE_GLEW
+#	include "GL/glew.h"
+#endif
 #include "GL/glut.h"
 #include "yzLib/yz_math/yz_lookup_table.h"
 #include "yzLib/yz_math/yz_numerical_utils.h"

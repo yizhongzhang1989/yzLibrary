@@ -12,6 +12,9 @@
 #include "yzLib/yz_setting.h"
 
 #include <iostream>
+#ifdef yzLib_ENABLE_GLEW
+#	include "GL/glew.h"
+#endif
 #include "GL/glut.h"
 
 namespace yz{	namespace opengl{
