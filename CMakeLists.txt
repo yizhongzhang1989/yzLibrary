@@ -3,6 +3,8 @@ cmake_minimum_required (VERSION 3.2)
 message("This CMakeList.txt is written for 64bit system only")
 
 project (yzLibExamples LANGUAGES CXX)
+set(yzLibrary_ROOT_DIR ${CMAKE_SOURCE_DIR})
+
 
 if(${MSVC}) 
 	message(STATUS "Build with MSVC")

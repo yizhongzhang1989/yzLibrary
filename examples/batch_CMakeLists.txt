@@ -78,7 +78,7 @@ endif()
 ###############################################
 if(${MSVC}) 
 	configure_file(
-		"${CMAKE_SOURCE_DIR}/examples/vs_tmp.vcxproj.user.in" 
+		"${yzLibrary_ROOT_DIR}/examples/vs_tmp.vcxproj.user.in" 
 		"${PROJECT_BINARY_DIR}/${example}.vcxproj.user"
 		@ONLY)
 	# message(STATUS "created: ${PROJECT_BINARY_DIR}/${example}.vcxproj.user")
