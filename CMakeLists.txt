@@ -38,7 +38,7 @@ endif()
 # Options and config
 ###############################################
 include(yzLib/yzLib.cmake)
-yzLib_set_ENABLE(OpenGL ON)
+yzLib_set_ENABLE(GLUT ON)
 yzLib_set_ENABLE(GLEW ON)
 
 option(ENABLE_OPENGL "Whether enable OpenGL when build the project" ON)
