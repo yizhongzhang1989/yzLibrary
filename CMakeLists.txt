@@ -41,11 +41,6 @@ include(yzLib/yzLib.cmake)
 yzLib_set_ENABLE(GLUT ON)
 yzLib_set_ENABLE(GLEW ON)
 
-option(ENABLE_OPENGL "Whether enable OpenGL when build the project" ON)
-option(ENABLE_GLEW "Whether enable GLEW when build the project" ON)
-option(ENABLE_MKL "Whether enable MKL when build the project" OFF)
-option(ENABLE_CUDA "Whether enable CUDA when build the project" OFF)
-
 ###############################################
 # Subdirectory and dependency
 ###############################################
