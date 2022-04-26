@@ -63,8 +63,8 @@ public:
 		\return					whether read file succeed
 	*/
 	inline int ReadSkeletonFromBVH(const char* bvh_file_name, double meter_per_unit=1){
-		//return readMocapFromBVH(bvh_file_name, this, (SkeletonMotionData<T>*)NULL, meter_per_unit, 'd');
-		return readMocapFromBVH(bvh_file_name, this, NULL, meter_per_unit, 'd');
+		return readMocapFromBVH(bvh_file_name, this, (SkeletonMotionData<T>*)NULL, meter_per_unit, 'd');
+		//return readMocapFromBVH(bvh_file_name, this, NULL, meter_per_unit, 'd');
 	}
 
 	/**
