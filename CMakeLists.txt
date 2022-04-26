@@ -3,6 +3,8 @@ cmake_minimum_required (VERSION 3.2)
 message("This CMakeList.txt is written for 64bit system only")
 
 project (yzLibExamples LANGUAGES CXX)
+set(yzLibrary_ROOT_DIR ${CMAKE_SOURCE_DIR})
+
 
 if(${MSVC}) 
 	message(STATUS "Build with MSVC")
@@ -36,13 +38,8 @@ endif()
 # Options and config
 ###############################################
 include(yzLib/yzLib.cmake)
-yzLib_set_ENABLE(OpenGL ON)
+yzLib_set_ENABLE(GLUT ON)
 yzLib_set_ENABLE(GLEW ON)
-
-option(ENABLE_OPENGL "Whether enable OpenGL when build the project" ON)
-option(ENABLE_GLEW "Whether enable GLEW when build the project" ON)
-option(ENABLE_MKL "Whether enable MKL when build the project" OFF)
-option(ENABLE_CUDA "Whether enable CUDA when build the project" OFF)
 
 ###############################################
 # Subdirectory and dependency

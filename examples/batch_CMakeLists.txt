@@ -6,29 +6,29 @@ file(RELATIVE_PATH folder_name ${CMAKE_CURRENT_LIST_DIR}/../.. ${CMAKE_CURRENT_L
 # Check config
 ###############################################
 include(config.txt OPTIONAL)
-if(REQUIRE_OPENGL AND NOT ENABLE_OPENGL)
-	message("skipped project: ${folder_name}/${project_name}, OpenGL required")
+if(REQUIRE_GLUT AND NOT yzLib_ENABLE_GLUT)
+	message("skipped project: ${folder_name}/${project_name}, GLUT required")
 	return()
 endif()
-if(REQUIRE_GLEW AND NOT ENABLE_GLEW)
+if(REQUIRE_GLEW AND NOT yzLib_ENABLE_GLEW)
 	message("skipped project: ${folder_name}/${project_name}, GLEW required")
 	return()
 endif()
-if(REQUIRE_MKL AND NOT ENABLE_MKL)
+if(REQUIRE_MKL AND NOT yzLib_ENABLE_MKL)
 	message("skipped project: ${folder_name}/${project_name}, MKL required")
 	return()
 endif()
-if(REQUIRE_CUDA AND NOT ENABLE_CUDA)
+if(REQUIRE_CUDA AND NOT yzLib_ENABLE_CUDA)
 	message("skipped project: ${folder_name}/${project_name}, CUDA required")
 	return()
 endif()
-if(REQUIRE_EIGEN AND NOT (EIGEN_FOUND OR Eigen3_FOUND))
+if(REQUIRE_EIGEN AND NOT yzLib_ENABLE_Eigen)
 	message("skipped project: ${folder_name}/${project_name}, EIGEN required")
 	return()
 endif()
 
 
-if(REQUIRE_OPENGL)
+if(REQUIRE_GLUT)
 	if(${MSVC})
 		# we already included OpenGL, so don't need to do anything more
 	else()
@@ -57,7 +57,7 @@ file(GLOB  SOURCES
 
 add_executable(${project_name} ${SOURCES})
 
-if(REQUIRE_OPENGL)
+if(REQUIRE_GLUT)
 	if(${MSVC})
 			# we already included OpenGL, so don't need to do anything more
 	else()
@@ -78,7 +78,7 @@ endif()
 ###############################################
 if(${MSVC}) 
 	configure_file(
-		"${CMAKE_SOURCE_DIR}/examples/vs_tmp.vcxproj.user.in" 
+		"${yzLibrary_ROOT_DIR}/examples/vs_tmp.vcxproj.user.in" 
 		"${PROJECT_BINARY_DIR}/${example}.vcxproj.user"
 		@ONLY)
 	# message(STATUS "created: ${PROJECT_BINARY_DIR}/${example}.vcxproj.user")

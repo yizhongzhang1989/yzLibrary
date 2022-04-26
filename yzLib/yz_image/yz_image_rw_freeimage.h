@@ -16,6 +16,8 @@
 #include <fstream>
 #include <string>
 #include <algorithm>
+#include <Windows.h>
+#include "FreeImage.h"
 #include "yzLib/yzLib_config.h"
 #include "yzLib/yz_math/yz_numerical_utils.h"
 #include "yzLib/yz_utils/yz_string_utils.h"
