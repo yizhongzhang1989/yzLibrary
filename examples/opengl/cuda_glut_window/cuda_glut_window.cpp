@@ -21,10 +21,6 @@
 #include <iostream>
 #include <GL/glew.h>
 #include <GL/glut.h>
-#include <cuda.h>
-#include <cuda_runtime_api.h>
-#include <cuda_gl_interop.h>
-//#include <FreeImage.h>
 #include <yzLib/yz_lib.h>
 using namespace std;
 
@@ -223,7 +219,7 @@ void win2_keyboard(unsigned char key, int x, int y){
 			break;
 		case 'w':
 			cout << "write texture to image";
-			if( yz::utils::writeImageToFile("teapot.png", tex_ptr, cuda_fbo.tex_width, cuda_fbo.tex_height, 32*4) )
+			if( yz::utils::writeImageToFile("teapot.bmp", tex_ptr, cuda_fbo.tex_width, cuda_fbo.tex_height, 32*4) )
 				cout << " succeed" << endl;
 			else
 				cout << " failed" << endl;

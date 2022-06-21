@@ -1454,7 +1454,7 @@ public:
 		reset keyboard function and draw function with default draw in this class
 	*/
 	inline void CreateGLUTWindow() {
-		GLUTTextureWindow2D<ID>::CreateGLUTWindow();
+		GLUTWindow2D<ID>::CreateGLUTWindow();
 
 		texture.CreateTexture();	//	texture must be create here
 

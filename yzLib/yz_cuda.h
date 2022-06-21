@@ -1,7 +1,9 @@
 /***********************************************************/
 /**	\file
 	\brief		This file include compoments to make using of CUDA easier
-	\details	include the following header ahead if you want to use modules in yzLib
+	\details	The following statement is no longer valid, but not corrected yet.
+				ignore them.
+				include the following header ahead if you want to use modules in yzLib
 
 				#include <cuda.h>				//	yz_cuda
 
