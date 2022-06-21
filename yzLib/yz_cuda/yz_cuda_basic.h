@@ -11,11 +11,13 @@
 
 #include "yzLib/yz_setting.h"
 
-#if !(defined(YZ_cuda_h) && defined(YZ_cuda_runtime_api_h))
-#	error yz_cuda_basic.h must be included after cuda.h and cuda_runtime_api.h
-#endif
+//#if !(defined(YZ_cuda_h) && defined(YZ_cuda_runtime_api_h))
+//#	error yz_cuda_basic.h must be included after cuda.h and cuda_runtime_api.h
+//#endif
 
 #include <iostream>
+#include <cuda.h>
+#include <cuda_runtime_api.h>
 
 namespace yz{
 namespace cuda{

@@ -76,6 +76,19 @@ else()
 	message(WARNING "Eigen not found, update submodule to get Eigen")
 endif()
 
+# ---------- CUDA ----------
+if(yzLib_ENABLE_CUDA)
+	find_package(CUDA  REQUIRED)
+
+	if(CUDA_FOUND)
+		message(STATUS "CUDA version: ${CUDA_VERSION}")
+		include_directories(${CUDA_INCLUDE_DIRS})  
+		link_directories(${CUDA_TOOLKIT_ROOT_DIR}/lib/x64)
+	else()
+		message(ERROR "CUDA not found, you need to install CUDA, or disable yzLib_ENABLE_CUDA")
+	endif()
+endif()
+
 message(STATUS "==============================")
 
 yzLib_Print_Info()

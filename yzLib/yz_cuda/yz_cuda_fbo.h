@@ -11,17 +11,20 @@
 #include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
-#ifndef YZ_cuda_h
-#	error yz_cuda_opengl.h must be included after cuda.h
-#endif
-#ifndef YZ_cuda_runtime_api_h
-#	error yz_cuda_opengl.h must be included after cuda_runtime_api.h
-#endif
-#ifndef YZ_cuda_gl_interop_h
-#	error yz_cuda_opengl.h must be included after cuda_gl_interop.h
-#endif
+//#ifndef YZ_cuda_h
+//#	error yz_cuda_opengl.h must be included after cuda.h
+//#endif
+//#ifndef YZ_cuda_runtime_api_h
+//#	error yz_cuda_opengl.h must be included after cuda_runtime_api.h
+//#endif
+//#ifndef YZ_cuda_gl_interop_h
+//#	error yz_cuda_opengl.h must be included after cuda_gl_interop.h
+//#endif
 
 #include <iostream>
+#include <cuda.h>
+#include <cuda_runtime_api.h>
+#include <cuda_gl_interop.h>
 #include "yzLib/yz_opengl/yz_fbo.h"
 #include "yzLib/yz_cuda/yz_cuda_basic.h"
 

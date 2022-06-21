@@ -56,7 +56,7 @@
 #endif
 
 //	cuda, if cuda.h is included ahead
-#ifdef YZ_cuda_h
+#ifdef yzLib_ENABLE_CUDA
 #	include "yzLib/yz_cuda.h"
 #endif
 

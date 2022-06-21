@@ -25,7 +25,7 @@
 #include "yzLib/yz_math/yz_math_setting.h"
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_utils/yz_reorder.h"
-#ifdef YZ_mkl_spblas_h	//	if mkl_spblas.h included, we can use mkl functions
+#ifdef yzLib_ENABLE_MKL
 #	include "yzLib/yz_math/yz_mkl_spblas_c.h"
 #endif
 

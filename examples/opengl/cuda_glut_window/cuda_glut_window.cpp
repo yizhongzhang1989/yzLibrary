@@ -24,9 +24,11 @@
 #include <cuda.h>
 #include <cuda_runtime_api.h>
 #include <cuda_gl_interop.h>
-#include <FreeImage.h>
+//#include <FreeImage.h>
 #include <yzLib/yz_lib.h>
 using namespace std;
+
+#pragma comment(lib, "cudart.lib")
 
 //	3 windows and a manager, ID of each window must be unique
 yz::opengl::DemoWindowManager		manager;

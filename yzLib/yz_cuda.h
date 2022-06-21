@@ -27,20 +27,20 @@
 #include "yzLib/yz_setting.h"
 
 
-#if !( defined(YZ_cuda_h) && defined(YZ_cuda_runtime_api_h) )
-#	error yz_cuda.h must be included after cuda.h and cuda_runtime_api.h
-#endif
+//#if !( defined(YZ_cuda_h) && defined(YZ_cuda_runtime_api_h) )
+//#	error yz_cuda.h must be included after cuda.h and cuda_runtime_api.h
+//#endif
 
 //	------------------------
 //	link cuda lib
 //	------------------------
-#ifdef YZ_LINK_CUDART_LIB
-#	pragma comment( lib, "cudart.lib" )
-#endif
-
-#ifdef YZ_LINK_CUBLAS_LIB
-#	pragma comment( lib, "cublas.lib" )
-#endif
+//#ifdef YZ_LINK_CUDART_LIB
+//#	pragma comment( lib, "cudart.lib" )
+//#endif
+//
+//#ifdef YZ_LINK_CUBLAS_LIB
+//#	pragma comment( lib, "cublas.lib" )
+//#endif
 
 //	------------------------
 //	include yzLib
@@ -52,12 +52,17 @@
 #	include "yzLib/yz_cuda/yz_cuda_debug.h"
 #endif
 
-#ifdef YZ_cuda_gl_interop_h	//	use opengl in cuda
+#ifdef yzLib_ENABLE_GLUT
 #	include "yzLib/yz_cuda/yz_cuda_opengl.h"
-#	ifdef YZ_glew_h
-#		include "yzLib/yz_cuda/yz_cuda_fbo.h"
-#	endif
-#endif	//	#ifdef __CUDA_GL_INTEROP_H__
+#	include "yzLib/yz_cuda/yz_cuda_fbo.h"
+#endif
+
+//#ifdef YZ_cuda_gl_interop_h	//	use opengl in cuda
+//#	include "yzLib/yz_cuda/yz_cuda_opengl.h"
+//#	ifdef YZ_glew_h
+//#		include "yzLib/yz_cuda/yz_cuda_fbo.h"
+//#	endif
+//#endif	//	#ifdef __CUDA_GL_INTEROP_H__
 
 
 #endif	//	__YZ_CUDA_H__

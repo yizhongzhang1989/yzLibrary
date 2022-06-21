@@ -9,11 +9,9 @@
 #ifndef __YZ_EIGEN_DIRECT_SOLVER_H__
 #define __YZ_EIGEN_DIRECT_SOLVER_H__
 
-#ifndef YZ_eigen_sparse_h
-#	error	yz_eigen_direct_solver.h must be included after Eigen/Sparse
-#endif
 
 #include <iostream>
+#include <Eigen/Sparse>
 #include "yzLib/yz_setting.h"
 #include "yzLib/yz_math/yz_sparse_matrix.h"
 

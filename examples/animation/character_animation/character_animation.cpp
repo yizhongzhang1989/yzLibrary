@@ -10,9 +10,12 @@
 
 #include <omp.h>
 #include <iostream>
+#include <GL/glew.h>
 #include <GL/glut.h>
-#include <mkl_types.h>
-#include <mkl_dss.h>
+#include <Eigen/Dense>
+#include <Eigen/Sparse>
+//#include <mkl_types.h>
+//#include <mkl_dss.h>
 #include <yzLib/yz_lib.h>
 using namespace std;
 
@@ -97,7 +100,7 @@ void idle(){
 int main(){
 	char bvh_filename[1024], obj_filename[1024];
 	sprintf(bvh_filename, "%s/James_motion.bvh", data_path);
-	sprintf(bvh_filename, "%s/James_mesh.obj", data_path);
+	sprintf(obj_filename, "%s/James_simplify.obj", data_path);
 
 	if( !James_skeleton.ReadSkeletonAndFramesFromBVH(bvh_filename, 0.025) ){
 		cout << "read James skeleton failed" << endl;

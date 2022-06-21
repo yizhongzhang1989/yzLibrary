@@ -11,9 +11,6 @@
 
 #include "yzLib/yz_setting.h"
 
-#if !defined(YZ_mkl_h) || !defined(YZ_mkl_lapacke_h)
-#	error yz_pca.h must be included after mkl.h and mkl_lapacke.h
-#endif
 
 #include <stdlib.h>
 #include "yzLib/yz_math/yz_vector_utils.h"

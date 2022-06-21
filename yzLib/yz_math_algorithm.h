@@ -8,6 +8,9 @@
 #ifndef __YZ_MATH_ALGORITHM_H__
 #define __YZ_MATH_ALGORITHM_H__
 
+//	config
+#include "yzLib/yzLib_config.h"
+
 //	setting
 #include "yzLib/yz_setting.h"
 
@@ -43,16 +46,12 @@
 #include "yzLib/yz_math/yz_blas_sparse_operators.h"
 #include "yzLib/yz_math/yz_solver.h"
 
-#ifdef YZ_eigen_sparse_h
+#ifdef yzLib_ENABLE_Eigen
 #	include "yzLib/yz_math/yz_eigen_direct_solver.h"
 #endif
 
-#ifdef YZ_mkl_spblas_h
+#ifdef yzLib_ENABLE_MKL
 #	include "yzLib/yz_math/yz_mkl_spblas_c.h"
-#endif
-
-//	advanced algorighm using MKL
-#if defined(YZ_mkl_h) && defined(YZ_mkl_lapacke_h)
 #	include "yzLib/yz_math/yz_pca.h"
 #endif
 
