@@ -115,6 +115,11 @@ public:
 		}
 		GLint max_size;
 		glGetIntegerv(GL_MAX_TEXTURE_SIZE, &max_size);
+		if (max_size <= 0) {
+			std::cout << "warning: Texture::SetupTexturePtr, invalid GL_MAX_TEXTURE_SIZE value: "
+				<< max_size << ", ignore texture size limit" << std::endl;
+			max_size = 0x7FFFFFFF;
+		}
 		if (tex_width > max_size || tex_height > max_size) {
 			std::cout << "error: Texture::SetupTexturePtr, input texture size ("
 				<< tex_width << 'x' << tex_height << ")too big, max size is: ("
