@@ -50,12 +50,14 @@ public:
 		\param	stride			byte offset between consecutive vertices, third param of glVertexPointer
 		\param	usage			type of the buffer, the last parameter of glBufferData
 	*/
-	void SetVertexBuffer(	void*	ptr, 
-							int		size_in_bytes, 
-							GLint  	coordinates_per_vertex	= 3,
-							GLenum	type					= GL_FLOAT,
-							GLsizei stride					= 0,
-							GLenum	usage					= GL_STATIC_DRAW ){
+	void SetVertexBuffer(
+		const void*	ptr,
+		int			size_in_bytes,
+		GLint  		coordinates_per_vertex	= 3,
+		GLenum		type					= GL_FLOAT,
+		GLsizei		stride					= 0,
+		GLenum		usage					= GL_STATIC_DRAW
+	) {
 		if( !vertex_vbo_id ){	//	buffer not created yet
 			glGenBuffers(1, &vertex_vbo_id);
 		}
@@ -78,11 +80,13 @@ public:
 		\param	stride			byte offset between consecutive vertices, second param of glNormalPointer
 		\param	usage			type of the buffer, the last parameter of glBufferData
 	*/
-	void SetVertexNormalBuffer(	void*	ptr, 
-								int		size_in_bytes, 
-								GLenum	type					= GL_FLOAT,
-								GLsizei stride					= 0,
-								GLenum	usage					= GL_STATIC_DRAW ){
+	void SetVertexNormalBuffer(	
+		const void*	ptr, 
+		int			size_in_bytes,
+		GLenum		type					= GL_FLOAT,
+		GLsizei		stride					= 0,
+		GLenum		usage					= GL_STATIC_DRAW
+	) {
 		if( !normal_vbo_id ){	//	buffer not created yet
 			glGenBuffers(1, &normal_vbo_id);
 		}
@@ -105,12 +109,14 @@ public:
 		\param	stride			byte offset between consecutive vertices, third param of glColorPointer
 		\param	usage			type of the buffer, the last parameter of glBufferData
 	*/
-	void SetVertexColorBuffer(	void*	ptr, 
-								int		size_in_bytes, 
-								GLint  	coordinates_per_vertex	= 3,
-								GLenum	type					= GL_FLOAT,
-								GLsizei stride					= 0,
-								GLenum	usage					= GL_STATIC_DRAW ){
+	void SetVertexColorBuffer(	
+		const void*	ptr,
+		int			size_in_bytes,
+		GLint  		coordinates_per_vertex	= 3,
+		GLenum		type					= GL_FLOAT,
+		GLsizei		stride					= 0,
+		GLenum		usage					= GL_STATIC_DRAW
+	){
 		if( !color_vbo_id ){	//	buffer not created yet
 			glGenBuffers(1, &color_vbo_id);
 		}
@@ -125,6 +131,34 @@ public:
 	}
 
 	/**
+		set texture coordinate buffer
+
+		\param	ptr				pointer to the texture coordinate array
+		\param	size_in_bytes	size of the array in bytes
+		\param	type			type of the vertex array, GL_SHORT, GL_INT, GL_FLOAT, GL_DOUBLE, second param of glTexCoordPointer
+		\param	stride			byte offset between consecutive vertices, third param of glTexCoordPointer
+		\param	usage			type of the buffer, the last parameter of glBufferData
+	*/
+	void SetTexCoordBuffer(
+		const void*	ptr,
+		int			size_in_bytes,
+		GLenum		type					= GL_FLOAT,
+		GLsizei		stride					= 0,
+		GLenum		usage					= GL_STATIC_DRAW
+	) {
+		if (!tex_coord_vbo_id) {	//	buffer not created yet
+			glGenBuffers(1, &tex_coord_vbo_id);
+		}
+
+		glBindBuffer(GL_ARRAY_BUFFER, tex_coord_vbo_id);
+		glBufferData(GL_ARRAY_BUFFER, size_in_bytes, ptr, usage);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+		tex_coord_type = type;
+		tex_coord_stride = stride;
+	}
+
+	/**
 		set element index buffer
 
 		\param	ptr				pointer to the face array
@@ -133,11 +167,13 @@ public:
 		\param	type			type of the index array, GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT, third param of glDrawElements
 		\param	usage			type of the buffer, the last parameter of glBufferData
 	*/
-	void SetIndexBuffer(void*	ptr, 
-						int		size_in_bytes, 
-						GLsizei	count, 
-						GLenum	type	= GL_UNSIGNED_INT,
-						GLenum	usage	= GL_STATIC_DRAW ){
+	void SetIndexBuffer(
+		const void*	ptr,
+		int			size_in_bytes,
+		GLsizei		count,
+		GLenum		type					= GL_UNSIGNED_INT,
+		GLenum		usage					= GL_STATIC_DRAW
+	){
 		if( !index_vbo_id ){	//	buffer not created yet
 			glGenBuffers(1, &index_vbo_id);
 		}
@@ -170,6 +206,13 @@ public:
 			glNormalPointer(normal_type, normal_stride, NULL); 
 		}
 
+		//	bind vertex texture coordinate
+		if (tex_coord_vbo_id) {
+			glBindBuffer(GL_ARRAY_BUFFER, tex_coord_vbo_id);
+			glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+			glTexCoordPointer(2, tex_coord_type, tex_coord_stride, NULL);
+		}
+
 		//	bind vertex color
 		if( color_vbo_id ){
 			glBindBuffer(GL_ARRAY_BUFFER, color_vbo_id);
@@ -184,6 +227,8 @@ public:
 		//	disable all
 		if( color_vbo_id )
 			glDisableClientState(GL_COLOR_ARRAY);
+		if (tex_coord_vbo_id)
+			glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 		if( normal_vbo_id )
 			glDisableClientState(GL_NORMAL_ARRAY);
 		glDisableClientState(GL_VERTEX_ARRAY);
@@ -192,7 +237,6 @@ public:
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	}
-
 
 public:
 	//	vertex
@@ -205,6 +249,11 @@ public:
 	GLuint	normal_vbo_id;
 	GLenum	normal_type;
 	GLsizei normal_stride;
+
+	//	texture
+	GLuint	tex_coord_vbo_id;
+	GLenum	tex_coord_type;
+	GLsizei tex_coord_stride;
 
 	//	vertex color
 	GLuint	color_vbo_id;
@@ -226,6 +275,9 @@ private:
 		normal_vbo_id	= 0;
 		normal_stride	= 0;
 
+		tex_coord_vbo_id = 0;
+		tex_coord_stride = 0;
+
 		color_vbo_id	= 0;
 		color_size		= 0;
 		color_stride	= 0;
@@ -235,10 +287,11 @@ private:
 	}
 
 	void DeleteBuffers(){
-		if(vertex_vbo_id)		glDeleteBuffers(1, &vertex_vbo_id);
-		if(normal_vbo_id)		glDeleteBuffers(1, &normal_vbo_id);
-		if(color_vbo_id)		glDeleteBuffers(1, &color_vbo_id);
-		if(index_vbo_id)		glDeleteBuffers(1, &index_vbo_id);
+		if (vertex_vbo_id)		glDeleteBuffers(1, &vertex_vbo_id);
+		if (normal_vbo_id)		glDeleteBuffers(1, &normal_vbo_id);
+		if (tex_coord_vbo_id)	glDeleteBuffers(1, &tex_coord_vbo_id);
+		if (color_vbo_id)		glDeleteBuffers(1, &color_vbo_id);
+		if (index_vbo_id)		glDeleteBuffers(1, &index_vbo_id);
 	}
 };
 
