@@ -406,6 +406,8 @@ public:
 	static GLdouble z_near, z_far;			///<	clippint plane
 	static int				use_arcball_flag;		///<	if this flag is set, we use arcball; otherwise use turntable
 	static yz::Matrix4x4d	arcball_mat_col_major;	///<	matrix used by arcball
+	static float			mouse_motion_speed_xy;	///<	speed of mouse motion on xy coordinate
+	static float			mouse_motion_speed_z;	///<	speed of mouse motion on z coordinate
 
 	//	background
 	static GLclampf back_ground_red;		///<	background color red
@@ -831,8 +833,8 @@ public:
 	static void DefaultMotionFunc(int x, int y){
 		if(BaseGLUTWindow<ID>::mouse_state[GLUT_LEFT_BUTTON] == GLUT_DOWN ){
 			if(BaseGLUTWindow<ID>::modifier & GLUT_ACTIVE_SHIFT ){
-				eye_x -= float( x - BaseGLUTWindow<ID>::old_x ) / 20;
-				eye_y += float( y - BaseGLUTWindow<ID>::old_y ) / 20;
+				eye_x -= mouse_motion_speed_xy * ( x - BaseGLUTWindow<ID>::old_x ) / 20;
+				eye_y += mouse_motion_speed_xy * ( y - BaseGLUTWindow<ID>::old_y ) / 20;
 			}
 			else{
 				if (use_arcball_flag){	//	rotate the scene by arcball
@@ -850,17 +852,17 @@ public:
 					}
 				}
 				else{					//	rotate the scene by turntable
-					spin_x += float(x - BaseGLUTWindow<ID>::old_x);
-					spin_y += float(y - BaseGLUTWindow<ID>::old_y);
+					spin_x += mouse_motion_speed_xy * (x - BaseGLUTWindow<ID>::old_x);
+					spin_y += mouse_motion_speed_xy * (y - BaseGLUTWindow<ID>::old_y);
 				}
 			}
 		}
 		else if(BaseGLUTWindow<ID>::mouse_state[GLUT_MIDDLE_BUTTON] == GLUT_DOWN ){
-			eye_x -= float( x - BaseGLUTWindow<ID>::old_x ) / 20;
-			eye_y += float( y - BaseGLUTWindow<ID>::old_y ) / 20;
+			eye_x -= mouse_motion_speed_xy * ( x - BaseGLUTWindow<ID>::old_x ) / 20;
+			eye_y += mouse_motion_speed_xy * ( y - BaseGLUTWindow<ID>::old_y ) / 20;
 		}
 		else if(BaseGLUTWindow<ID>::mouse_state[GLUT_RIGHT_BUTTON] == GLUT_DOWN ){
-			eye_z += float( y - BaseGLUTWindow<ID>::old_y ) / 10;
+			eye_z += mouse_motion_speed_z * ( y - BaseGLUTWindow<ID>::old_y ) / 10;
 		}
 
 		BaseGLUTWindow<ID>::old_x = x;
@@ -915,6 +917,8 @@ template<int ID> GLdouble	GLUTWindow3D<ID>::fovy		= 45;
 template<int ID> GLdouble	GLUTWindow3D<ID>::z_near	= 0.1;
 template<int ID> GLdouble	GLUTWindow3D<ID>::z_far		= 100;
 template<int ID> int		GLUTWindow3D<ID>::use_arcball_flag	= 0;
+template<int ID> float		GLUTWindow3D<ID>::mouse_motion_speed_xy = 1.0f;
+template<int ID> float		GLUTWindow3D<ID>::mouse_motion_speed_z = 1.0f;
 template<int ID> yz::Matrix4x4d	GLUTWindow3D<ID>::arcball_mat_col_major;
 template<int ID> GLclampf	GLUTWindow3D<ID>::back_ground_red	= 0.0;
 template<int ID> GLclampf	GLUTWindow3D<ID>::back_ground_green	= 0.0;
