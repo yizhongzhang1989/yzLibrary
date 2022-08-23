@@ -12,7 +12,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
-#include "yzLib/yzLib_config.h"
+#include "yzLib_config.h"
 #include "yzLib/yz_setting.h"
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_geometry/yz_mesh_utils.h"

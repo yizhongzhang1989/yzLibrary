@@ -8,7 +8,7 @@
 #ifndef __YZ_CUDA_OPENGL_H__
 #define __YZ_CUDA_OPENGL_H__
 
-#include "yzLib/yzLib_config.h"
+#include "yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
 //#ifndef YZ_cuda_h

@@ -9,7 +9,7 @@
 #define __YZ_GEOMETRY_MESH_H__
 
 //	setting
-#include "yzLib/yzLib_config.h"
+#include "yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
 //	mesh utils (functions)

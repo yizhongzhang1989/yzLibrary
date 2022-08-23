@@ -9,7 +9,7 @@
 #ifndef __YZ_POINT_POINT_H__
 #define __YZ_POINT_POINT_H__
 
-#include "yzLib/yzLib_config.h"
+#include "yzLib_config.h"
 
 namespace yz {	namespace geometry {	namespace icp {
 

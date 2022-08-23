@@ -12,7 +12,7 @@
 
 #pragma  warning(disable:4996)
 
-#include "yzLib/yzLib_config.h"
+#include "yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
 #include <stdio.h>

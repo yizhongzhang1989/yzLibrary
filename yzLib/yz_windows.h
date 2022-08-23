@@ -9,7 +9,7 @@
 #define __YZ_WINDOWS_H__
 
 //	setting
-#include "yzLib/yzLib_config.h"
+#include "yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
 #include "yzLib/yz_windows/yz_win_utils.h"

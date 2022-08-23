@@ -12,7 +12,7 @@
 #ifndef __YZ_IMAGE_RW_H__
 #define __YZ_IMAGE_RW_H__
 
-#include "yzLib/yzLib_config.h"
+#include "yzLib_config.h"
 #include "yzLib/yz_image/yz_image_rw_bmp.h"
 #include "yzLib/yz_image/yz_image_rw_pfm.h"
 
