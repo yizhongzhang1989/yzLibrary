@@ -11,9 +11,9 @@ I originally write yzLibrary to ease the labor of developing small demos for com
 Currently, yzLibrary has 2 submodules, ./deps and 3rdParty/eigen. ./deps contains runtime dll for OpenGL and data necessary for example projects. 3rdParty/eigen is used in some functions. yzLibrary also works without these submodules, as you can use it just like a template only header library. 
 
 
-##Usage
+## Usage
 
-###Setup by cmake
+### Setup by cmake
 
 It is recommended to use yzLibrary via cmake as submodule. In this way, all configs can be set automatically, and you can try the examples provided by yzLibrary very easily. 
 
@@ -48,7 +48,7 @@ After running this code, directory of yzLib header files will be included. The 3
 For more usage details, please refer the CMakeLists.txt in yzLibrary. This file will generate example projects for yzLibrary.
 
 
-###Setup by copy code
+### Setup by copy code
 
 If you prefer to use yzLibrary without cmake, you need to follow the following steps.
 
