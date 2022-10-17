@@ -8,6 +8,9 @@
 #ifndef __YZ_MATH_H__
 #define __YZ_MATH_H__
 
+#pragma warning(push)
+#pragma warning(disable: 4267)	//	disable warning of size_t int conversion
+
 //	config
 #include "yzLib/yzLib_config.h"
 
@@ -23,5 +26,6 @@
 //	math utils
 #include "yzLib/yz_math_utils.h"
 
+#pragma warning(pop)
 
 #endif	//	__YZ_MATH_H__

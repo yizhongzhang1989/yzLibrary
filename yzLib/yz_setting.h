@@ -32,7 +32,7 @@
 	of compilers, <omp.h> must be included and omp enabled. But if
 	we don't want openmp anyway, disable the macro
 */
-#define	ENABLE_OPENMP
+//#define	ENABLE_OPENMP
 
 /**
 	include yz_animation

@@ -75,7 +75,10 @@ public:
 		AABBTree3D<T> aabb;
 		aabb.BuildTriangleAABBTree(vertex, face);
 
-#pragma omp parallel	//	the calculation of each voxel is independent
+
+#ifdef ENABLE_OPENMP
+#	pragma omp parallel	//	the calculation of each voxel is independent
+#endif
 		for (int k = 0; k < dim.z; k++){
 			Vec3<T> p(xyz0.x, xyz0.y, xyz0.z + k*voxel_size);
 			for (int j = 0; j < dim.y; j++){

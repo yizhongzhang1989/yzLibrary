@@ -8,6 +8,9 @@
 #ifndef __YZ_ANIMATION_H__
 #define __YZ_ANIMATION_H__
 
+#pragma warning(push)
+#pragma warning(disable: 4267)	//	disable warning of size_t int conversion
+
 //	setting
 #include "yzLib/yz_setting.h"
 
@@ -25,5 +28,7 @@
 //	rigging
 #include "yzLib/yz_animation/yz_lbs_rigging.h"
 #include "yzLib/yz_animation/yz_rigging_to_mesh.h"
+
+#pragma warning(pop)
 
 #endif	//	__YZ_ANIMATION_H__

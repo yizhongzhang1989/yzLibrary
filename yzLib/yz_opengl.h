@@ -18,6 +18,9 @@
 #ifndef __YZ_OPENGL_H__
 #define __YZ_OPENGL_H__
 
+#pragma warning(push)
+#pragma warning(disable: 4267)	//	disable warning of size_t int conversion
+
 //	setting
 #include "yzLib/yzLib_config.h"
 #include "yzLib/yz_setting.h"
@@ -53,6 +56,6 @@
 
 #endif
 
-
+#pragma warning(pop)
 
 #endif	//	__YZ_OPENGL_H__

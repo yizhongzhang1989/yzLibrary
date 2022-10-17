@@ -25,6 +25,9 @@
 #ifndef __YZ_CUDA_H__
 #define __YZ_CUDA_H__
 
+#pragma warning(push)
+#pragma warning(disable: 4267)	//	disable warning of size_t int conversion
+
 //	setting
 #include "yzLib/yz_setting.h"
 
@@ -66,5 +69,6 @@
 //#	endif
 //#endif	//	#ifdef __CUDA_GL_INTEROP_H__
 
+#pragma warning(pop)
 
 #endif	//	__YZ_CUDA_H__

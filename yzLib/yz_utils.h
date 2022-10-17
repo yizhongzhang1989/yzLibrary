@@ -8,6 +8,9 @@
 #ifndef __YZ_UTILS_H__
 #define __YZ_UTILS_H__
 
+#pragma warning(push)
+#pragma warning(disable: 4267)	//	disable warning of size_t int conversion
+
 //	setting
 #include "yzLib/yz_setting.h"
 
@@ -30,5 +33,6 @@
 #	include "yzLib/yz_utils/yz_sparse_visualize.h"
 #endif
 
+#pragma warning(pop)
 
 #endif	//	__YZ_UTILS_H__

@@ -1988,6 +1988,8 @@ void drawMeshEdge(
 	const int* edge, int edge_number, 
 	const T* vertex_normal, float offset = 0.001f)
 {
+#pragma warning(push)
+#pragma warning(disable: 4838)
 	glBegin( GL_LINES );
 		for( int i=0; i<edge_number; i++ ){
 			float nor0[3] = {vertex_normal[edge[i*2]*3], vertex_normal[edge[i*2]*3+1], vertex_normal[edge[i*2]*3+2]};
@@ -2004,6 +2006,7 @@ void drawMeshEdge(
 			glVertex3fv( v1 );
 		}
 	glEnd();
+#pragma warning(pop)
 }
 
 /**

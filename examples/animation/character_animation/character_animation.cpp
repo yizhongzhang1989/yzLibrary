@@ -8,7 +8,9 @@
 
 //	This example shows how to use Character Animation
 
-#include <omp.h>
+#ifdef ENABLE_OPENMP
+#	include <omp.h>
+#endif
 #include <iostream>
 #include <GL/glew.h>
 #include <GL/glut.h>

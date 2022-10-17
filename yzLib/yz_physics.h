@@ -8,6 +8,9 @@
 #ifndef __YZ_PHYSICS_H__
 #define __YZ_PHYSICS_H__
 
+#pragma warning(push)
+#pragma warning(disable: 4267)	//	disable warning of size_t int conversion
+
 //	setting
 #include "yzLib/yz_setting.h"
 
@@ -24,5 +27,6 @@
 //	folds and wrinkles
 #include "yzLib/yz_physics/yz_bending_force.h"
 
+#pragma warning(pop)
 
 #endif	//	__YZ_PHYSICS_H__
