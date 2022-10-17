@@ -8,7 +8,7 @@
 #ifndef __YZ_ASCII_DISPLAYER_H__
 #define __YZ_ASCII_DISPLAYER_H__
 
-#include "yzLib/yzLib_config.h"
+#include "yzLib_config.h"
 #include "yzLib/yz_setting.h"
 #include <iostream>
 #ifdef yzLib_ENABLE_GLEW

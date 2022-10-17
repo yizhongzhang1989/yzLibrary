@@ -12,7 +12,7 @@
 #pragma warning(disable: 4267)	//	disable warning of size_t int conversion
 
 //	config
-#include "yzLib/yzLib_config.h"
+#include "yzLib_config.h"
 
 //	setting
 #include "yzLib/yz_setting.h"

@@ -31,15 +31,11 @@ function(yzLib_set_ENABLE MODULE_NAME VALUE)	# copied from ceres solver
 
 	configure_file(
 	"${yzLib_DIR}/yzLib_config.h.in"
-	"${yzLib_DIR}/yzLib_config.h")
+	"${PROJECT_BINARY_DIR}/yzLib_config.h")
 endfunction()
 
 
-
 #################### yzLib config ####################
-
-set(yzLib_DIR ${CMAKE_CURRENT_LIST_DIR})
-get_filename_component(yzLib_INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/../ ABSOLUTE)
 
 option(yzLib_ENABLE_WINDOWS		"Whether Enable Windows in yzLib"		OFF)
 option(yzLib_ENABLE_Eigen		"Whether Enable EIGEN in yzLib"			OFF)
@@ -49,7 +45,15 @@ option(yzLib_ENABLE_GLEW		"Whether Enable GLEW in yzLib"			OFF)
 option(yzLib_ENABLE_FreeImage	"Whether Enable FreeImage in yzLib"		OFF)
 option(yzLib_ENABLE_CUDA		"Whether Enable CUDA in yzLib"			OFF)
 
+
+set(yzLib_DIR ${CMAKE_CURRENT_LIST_DIR})
+
 configure_file(
 	"${yzLib_DIR}/yzLib_config.h.in"
-	"${yzLib_DIR}/yzLib_config.h")
+	"${PROJECT_BINARY_DIR}/yzLib_config.h")
 
+get_filename_component(yzLib_INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/../ ABSOLUTE)
+set(yzLib_INCLUDE_DIRS
+	${yzLib_INCLUDE_DIR}
+	${PROJECT_BINARY_DIR})
+	

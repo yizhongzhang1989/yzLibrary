@@ -13,7 +13,7 @@
 #ifndef __YZ_WIN_PROCESS_H__
 #define __YZ_WIN_PROCESS_H__
 
-#include "yzLib/yzLib_config.h"
+#include "yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
 #include <Windows.h>

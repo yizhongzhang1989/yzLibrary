@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include <fstream>
-#include "yzLib/yzLib_config.h"
+#include "yzLib_config.h"
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_geometry/yz_mesh_nn.h"
 #include "yzLib/yz_geometry/yz_field/yz_field_base.h"

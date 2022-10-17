@@ -19,7 +19,7 @@
 
 
 //	config
-#include "yzLib/yzLib_config.h"
+#include "yzLib_config.h"
 
 //	setting
 #include "yzLib/yz_setting.h"

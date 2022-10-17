@@ -15,7 +15,7 @@
 #include <map>
 #include <unordered_set>
 #include <unordered_map>
-#include "yzLib/yzLib_config.h"
+#include "yzLib_config.h"
 #include "yzLib/yz_setting.h"
 
 
