@@ -19,7 +19,7 @@ std::vector<yz::Vec2<REAL>>		sample_point;
 int disp_depth = 0;
 
 template<class T>
-class Polygon : public yz::geometry::polygon::Polygon<T>{
+class MyPolygon : public yz::geometry::polygon::Polygon<T>{
 public:
 
 	yz::geometry::AABBTree2D<T>	edge_aabb;
@@ -43,7 +43,7 @@ public:
 	}
 };
 
-Polygon<REAL> polygon;
+MyPolygon<REAL> polygon;
 
 void draw(){
 	//glColor3f(0, 0, 1);

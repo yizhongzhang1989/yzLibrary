@@ -16,7 +16,7 @@
 #include "yzLib/yz_image/yz_image_rw_bmp.h"
 #include "yzLib/yz_image/yz_image_rw_pfm.h"
 
-#ifdef yzLib_ENABLE_FreeImage
+#if defined(yzLib_ENABLE_FreeImage) && defined(yzLib_ENABLE_WINDOWS)
 #include "yzLib/yz_image/yz_image_rw_freeimage.h"
 #endif
 

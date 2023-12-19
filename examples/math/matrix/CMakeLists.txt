@@ -26,7 +26,10 @@ if(REQUIRE_EIGEN AND NOT yzLib_ENABLE_Eigen)
 	message("skipped project: ${folder_name}/${project_name}, EIGEN required")
 	return()
 endif()
-
+if(REQUIRE_FreeImage AND NOT yzLib_ENABLE_FreeImage)
+	message("skipped project: ${folder_name}/${project_name}, FreeImage required")
+	return()
+endif()
 
 if(REQUIRE_GLUT)
 	if(${MSVC})
@@ -74,14 +77,10 @@ endif()
 
 
 ###############################################
-# Add .user file for Visual Studio to add bin to path
+# Set Path for Visual Studio to add bin to path
 ###############################################
-if(${MSVC}) 
-	configure_file(
-		"${yzLibrary_ROOT_DIR}/examples/vs_tmp.vcxproj.user.in" 
-		"${PROJECT_BINARY_DIR}/${example}.vcxproj.user"
-		@ONLY)
-	# message(STATUS "created: ${PROJECT_BINARY_DIR}/${example}.vcxproj.user")
+if(${MSVC} AND DEFINED BIN_PATH)
+	set_target_properties(${project_name} PROPERTIES VS_DEBUGGER_ENVIRONMENT "PATH=%PATH%;${BIN_PATH}")
 endif()
 
 

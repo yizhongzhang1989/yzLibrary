@@ -42,6 +42,9 @@ include_directories(${yzLib_INCLUDE_DIRS})
 
 yzLib_set_ENABLE(GLUT ON)
 yzLib_set_ENABLE(GLEW ON)
+yzLib_set_ENABLE(FreeImage ON)
+yzLib_set_ENABLE(WINDOWS ON)
+
 
 ###############################################
 # Subdirectory and dependency
