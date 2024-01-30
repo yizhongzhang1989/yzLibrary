@@ -40,25 +40,28 @@ endif()
 include(yzLib/yzLib.cmake)
 include_directories(${yzLib_INCLUDE_DIRS})
 
-yzLib_set_ENABLE(GLUT ON)
-yzLib_set_ENABLE(GLEW ON)
-yzLib_set_ENABLE(FreeImage ON)
-yzLib_set_ENABLE(WINDOWS ON)
-
 
 ###############################################
 # Subdirectory and dependency
 ###############################################
 message(STATUS "==============================")
 
-# ---------- yzLibraryDeps ----------
-if(NOT EXISTS ${CMAKE_SOURCE_DIR}/deps/inc)
-	message(FATAL_ERROR "deps not found, update submodule to get yzLibraryDeps")
-else()
-	message(STATUS "yzLibraryDeps found as submodule")
-	include_directories(${CMAKE_SOURCE_DIR}/deps/inc)
-	if(${MSVC}) 
-		set(BIN_PATH "${CMAKE_SOURCE_DIR}/deps/bin/win64;${CMAKE_SOURCE_DIR}/deps/bin/win32")
+if(${MSVC}) 
+	# ---------- yzLibraryDeps ----------
+	if(NOT EXISTS ${CMAKE_SOURCE_DIR}/deps/inc)
+		message(WARNING "deps not found, only basic examples. Update submodule yzLibraryDeps to release examples with GUI.")
+	else()
+		message(STATUS "yzLibraryDeps found as submodule")
+
+		yzLib_set_ENABLE(GLUT ON)
+		yzLib_set_ENABLE(GLEW ON)
+		yzLib_set_ENABLE(FreeImage ON)
+		yzLib_set_ENABLE(WINDOWS ON)
+
+		include_directories(${CMAKE_SOURCE_DIR}/deps/inc)
+		if(${MSVC}) 
+			set(BIN_PATH "${CMAKE_SOURCE_DIR}/deps/bin/win64;${CMAKE_SOURCE_DIR}/deps/bin/win32")
+		endif()
 	endif()
 endif()
 

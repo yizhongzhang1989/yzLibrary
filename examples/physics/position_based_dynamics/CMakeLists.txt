@@ -79,7 +79,7 @@ endif()
 ###############################################
 # Set Path for Visual Studio to add bin to path
 ###############################################
-if(${MSVC} AND DEFINED BIN_PATH)
+if(MSVC AND DEFINED BIN_PATH)
 	set_target_properties(${project_name} PROPERTIES VS_DEBUGGER_ENVIRONMENT "PATH=%PATH%;${BIN_PATH}")
 endif()
 
