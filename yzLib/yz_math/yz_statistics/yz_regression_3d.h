@@ -10,7 +10,7 @@
 
 #include <vector>
 #include "yzLib/yz_math/yz_matrix.h"
-#include "yzlib/yz_math/yz_vector_utils.h"
+#include "yzLib/yz_math/yz_vector_utils.h"
 
 namespace yz{	namespace statistics{
 
