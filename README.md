@@ -57,6 +57,10 @@ If you prefer to use yzLibrary without cmake, you need to follow the following s
 2. Copy and rename yzLib_config.h.in as yzLib_config.h into your include path, then edit the file. For variables you need to set, change #cmakedefine into #define, otherwise remove the line.
 
 
+### Build Examples
+
+I provide examples to test yzLib. You just need to config the repo with cmake, the generated project is for test purpose. 
+
 
 ## Document
 
