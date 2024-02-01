@@ -55,7 +55,8 @@ void keyboard(unsigned char key, int x, int y) {
 }
 
 
-int main() {
+int main(int argc, char* argv[]){
+	glutInit(&argc, argv);
 
 	yz::geometry::TriMesh<double>	mesh;
 	mesh.ReadMeshFromFile("non_ground.obj");

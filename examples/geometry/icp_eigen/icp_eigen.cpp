@@ -52,7 +52,9 @@ void print_3d() {
 	yz::opengl::printInfo(0, 60, "transformed source points");
 }
 
-int main() {
+int main(int argc, char* argv[]){
+	glutInit(&argc, argv);
+
 	//	prepare transform matrix
 	yz::Matrix4x4d trans;
 	yz::Matrix4x4d rot_x, rot_y, rot_z, trans_xyz;

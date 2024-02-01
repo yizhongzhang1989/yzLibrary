@@ -329,7 +329,9 @@ void keyboard(unsigned char key, int x, int y){
 	glutPostRedisplay();
 }
 
-int main(){
+int main(int argc, char* argv[]){
+	glutInit(&argc, argv);
+
 	char obj_filename[1024];
 	sprintf(obj_filename, "%s/sheet.obj", data_path);
 

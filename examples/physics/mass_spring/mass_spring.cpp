@@ -40,7 +40,9 @@ void idle() {
 	}
 }
 
-int main() {
+int main(int argc, char* argv[]){
+	glutInit(&argc, argv);
+
 	std::vector<yz::Vec3d> node;
 	node.push_back(yz::Vec3d(0, 0, 0));
 	node.push_back(yz::Vec3d(1, 0, 0));

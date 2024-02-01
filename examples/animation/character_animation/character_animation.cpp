@@ -45,9 +45,9 @@ void calculateFps(){
 
 void win3d_showInfo(){
 	glColor3f(1, 0, 1);
-	char* cmd1 = "press 's' to start";
-	char* cmd2 = "press 's' to stop";
-	char* cmd3 = "press 'r' to back to rest pose";
+	const char* cmd1 = "press 's' to start";
+	const char* cmd2 = "press 's' to stop";
+	const char* cmd3 = "press 'r' to back to rest pose";
 	yz::opengl::printInfo(0, 0, "fps: %f\n%s\n%s", fps, (moving_flag?cmd2:cmd1), cmd3);
 }
 

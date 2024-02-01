@@ -28,7 +28,9 @@ void draw(){
 	glEnable(GL_LIGHTING);
 }
 
-int main(){
+int main(int argc, char* argv[]){
+	glutInit(&argc, argv);
+
 	win3d.CreateGLUTWindow();
 	win3d.SetDraw(draw);
 	win3d.SetDrawAppend(print);
