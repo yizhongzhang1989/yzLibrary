@@ -7,8 +7,8 @@
 	*/
 /***********************************************************/
 #include <iostream>
-#include <GL/glew.h>
-#include <GL/glut.h>
+// #include <GL/glew.h>
+// #include <GL/glut.h>
 #include <yzLib/yz_lib.h>
 using namespace std;
 #include "data_path.h"
@@ -219,6 +219,8 @@ void idle(){
 
 //	main function
 int main(int argc, char* argv[]){
+	glutInit(&argc, argv);
+
 	char sheet_filename[1024], rigid_filename[1024];
 	sprintf(sheet_filename, "%s/sheet.obj", data_path);
 	sprintf(rigid_filename, "%s/sheet_rigid.obj", data_path);

@@ -23,17 +23,17 @@ int main() {
 		std::cout << "--------------------" << std::endl;
 	}
 
-	//std::cout << "==============================" << std::endl;
-	//std::cout << "Test Matrix3x3:" << std::endl;
-	//yz::Matrix3x3d	M3x3;
-	//M3x3.SetRotationDeg(yz::Vec3d(1, 1, 0), 90);
-	//std::cout << "Rotate around (1,1,0) 90deg: " << std::endl << M3x3 << std::endl;
+	std::cout << "==============================" << std::endl;
+	std::cout << "Test Matrix3x3:" << std::endl;
+	yz::Matrix3x3d	M3x3;
+	M3x3.SetRotationDeg(yz::Vec3d(1, 1, 0), 90);
+	std::cout << "Rotate around (1,1,0) 90deg: " << std::endl << M3x3 << std::endl;
 
-	//std::cout << "==============================" << std::endl;
-	//std::cout << "Test Matrix4x4:" << std::endl;
-	//yz::Matrix4x4d	M4x4;
-	//M4x4.SetRotationDeg(yz::Vec3d(1, 1, 0), 90);
-	//std::cout << "Rotate around (1,1,0) 90deg: " << std::endl << M4x4 << std::endl;
+	std::cout << "==============================" << std::endl;
+	std::cout << "Test Matrix4x4:" << std::endl;
+	yz::Matrix4x4d	M4x4;
+	M4x4.SetRotationDeg(yz::Vec3d(1, 1, 0), 90);
+	std::cout << "Rotate around (1,1,0) 90deg: " << std::endl << M4x4 << std::endl;
 
 	return 0;
 }

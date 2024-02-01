@@ -10,6 +10,9 @@
 #define __YZ_POINT_POINT_H__
 
 #include "yzLib_config.h"
+#ifdef yzLib_ENABLE_Eigen
+#	include <Eigen/Dense>
+#endif
 
 namespace yz {	namespace geometry {	namespace icp {
 

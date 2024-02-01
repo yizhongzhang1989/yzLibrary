@@ -1,6 +1,6 @@
 #include <iostream>
-#include <GL/glew.h>
-#include <GL/glut.h>
+// #include <GL/glew.h>
+// #include <GL/glut.h>
 #include <yzLib/yz_lib.h>
 #include "data_path.h"
 
@@ -179,7 +179,9 @@ void idle() {
 	std::cout << steps << std::endl;
 }
 
-int main() {
+int main(int argc, char* argv[]){
+	glutInit(&argc, argv);
+
 	char obj_filename[1024];
 	sprintf(obj_filename, "%s/cube.obj", data_path);
 

@@ -12,8 +12,8 @@
 #	include <omp.h>
 #endif
 #include <iostream>
-#include <GL/glew.h>
-#include <GL/glut.h>
+// #include <GL/glew.h>
+// #include <GL/glut.h>
 #include <Eigen/Dense>
 #include <Eigen/Sparse>
 //#include <mkl_types.h>
@@ -45,9 +45,9 @@ void calculateFps(){
 
 void win3d_showInfo(){
 	glColor3f(1, 0, 1);
-	char* cmd1 = "press 's' to start";
-	char* cmd2 = "press 's' to stop";
-	char* cmd3 = "press 'r' to back to rest pose";
+	const char* cmd1 = "press 's' to start";
+	const char* cmd2 = "press 's' to stop";
+	const char* cmd3 = "press 'r' to back to rest pose";
 	yz::opengl::printInfo(0, 0, "fps: %f\n%s\n%s", fps, (moving_flag?cmd2:cmd1), cmd3);
 }
 
@@ -99,7 +99,9 @@ void idle(){
 	}
 }
 
-int main(){
+int main(int argc, char* argv[]){
+	glutInit(&argc, argv);
+
 	char bvh_filename[1024], obj_filename[1024];
 	sprintf(bvh_filename, "%s/James_motion.bvh", data_path);
 	sprintf(obj_filename, "%s/James_simplify.obj", data_path);

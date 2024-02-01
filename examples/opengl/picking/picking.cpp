@@ -19,8 +19,8 @@
 
 #include <iostream>
 #include <string>
-#include <GL/glew.h>
-#include <GL/glut.h>
+// #include <GL/glew.h>
+// #include <GL/glut.h>
 #include <yzLib/yz_lib.h>
 using namespace std;
 #include "data_path.h"
@@ -257,6 +257,8 @@ void special_keys_2d(int key, int x, int y){
 
 //	main function
 int main(int argc, char* argv[]){
+	glutInit(&argc, argv);
+	
 	char obj_filename[1024];
 	sprintf(obj_filename, "%s/unit_icosphere.obj", data_path);
 

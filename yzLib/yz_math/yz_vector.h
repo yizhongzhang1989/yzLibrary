@@ -13,6 +13,7 @@
 #include <assert.h>
 #include <iostream>
 #include <math.h>
+#include <type_traits>
 #include "yzLib/yz_math/yz_math_setting.h"
 
 namespace yz{
@@ -711,19 +712,22 @@ public:
 /**	@name Non-menber Vector Functions
 */
 //	========================================
-template<typename TYPE, class T> inline Vec2<TYPE_PROMOTE(T, TYPE)> operator * (const TYPE val, const Vec2<T> vec){
+template<typename TYPE, class T> inline typename std::enable_if<std::is_arithmetic<TYPE>::value, Vec2<TYPE_PROMOTE(T, TYPE)>>::type
+operator * (const TYPE val, const Vec2<T> vec){
 	Vec2<TYPE_PROMOTE(T, TYPE)> result(vec);
 	result *= val;
 	return result;
 }
 
-template<typename TYPE, class T> inline Vec3<TYPE_PROMOTE(T, TYPE)> operator * (const TYPE val, const Vec3<T> vec){
+template<typename TYPE, class T> inline typename std::enable_if<std::is_arithmetic<TYPE>::value, Vec3<TYPE_PROMOTE(T, TYPE)>>::type
+operator * (const TYPE val, const Vec3<T> vec){
 	Vec3<TYPE_PROMOTE(T, TYPE)> result(vec);
 	result *= val;
 	return result;
 }
 
-template<typename TYPE, class T> inline Vec4<TYPE_PROMOTE(T, TYPE)> operator * (const TYPE val, const Vec4<T> vec){
+template<typename TYPE, class T> inline typename std::enable_if<std::is_arithmetic<TYPE>::value, Vec4<TYPE_PROMOTE(T, TYPE)>>::type
+operator * (const TYPE val, const Vec4<T> vec){
 	Vec4<TYPE_PROMOTE(T, TYPE)> result(vec);
 	result *= val;
 	return result;

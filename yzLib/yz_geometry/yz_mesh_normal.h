@@ -21,6 +21,19 @@ namespace yz{	namespace geometry{
 //	========================================
 
 /**
+	calculate face normal given three vertices
+
+	\param	v0		position of vertex 0
+	\param	v1		position of vertex 1
+	\param	v2		position of vertex 2
+	\return			return the normal
+*/
+template<typename T>
+inline Vec3<T> calculateFaceNormal(Vec3<T> v0, Vec3<T> v1, Vec3<T> v2){
+	return cross(v2-v1, v0-v1).Normalize();
+}
+
+/**
 	calculate face normal 
 
 	\param	face_id		the index of face to calculate normal
@@ -35,19 +48,6 @@ inline Vec3<T> calculateFaceNormal(int							face_id,
 	assert(face_id>=0 && face_id<face.size());
 	return calculateFaceNormal(vertex[face[face_id].x], 
 		vertex[face[face_id].y], vertex[face[face_id].z]);
-}
-
-/**
-	calculate face normal given three vertices
-
-	\param	v0		position of vertex 0
-	\param	v1		position of vertex 1
-	\param	v2		position of vertex 2
-	\return			return the normal
-*/
-template<typename T>
-inline Vec3<T> calculateFaceNormal(Vec3<T> v0, Vec3<T> v1, Vec3<T> v2){
-	return cross(v2-v1, v0-v1).Normalize();
 }
 
 

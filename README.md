@@ -57,6 +57,27 @@ If you prefer to use yzLibrary without cmake, you need to follow the following s
 2. Copy and rename yzLib_config.h.in as yzLib_config.h into your include path, then edit the file. For variables you need to set, change #cmakedefine into #define, otherwise remove the line.
 
 
+## Build Examples
+
+I provide examples to test yzLib. You just need to config the repo with cmake, the generated project is for test purpose. I have tested the following methods.
+
+### Build on Windows
+
+1. Update submodules to download 3rdParty/eigen and deps. This will enable Eigen, GLUT, GLEW, FreeImage and Windows. Also test data will be downloaded.
+
+2. config and generate using cmake, then build with visual studio.
+
+### Build on Linux
+
+1. Update submodules to download 3rdParty/eigen and deps. This will enable Eigen. Also test data will be downloaded.
+
+2. To enable other modules, follow guidelines printed by cmake. For example, to enable GLUT, you need to install glut first with 
+```bash
+    sudo apt install libglu1-mesa-dev freeglut3-dev mesa-common-dev
+```
+
+3. config and generate using cmake, then build with make.
+
 
 ## Document
 

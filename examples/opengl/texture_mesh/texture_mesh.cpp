@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <GL/glew.h>
-#include <GL/glut.h>
+// #include <GL/glew.h>
+// #include <GL/glut.h>
 #include <yzLib/yz_lib.h>
 #include "data_path.h"
 
@@ -28,7 +28,9 @@ void draw(){
 	glEnable(GL_LIGHTING);
 }
 
-int main(){
+int main(int argc, char* argv[]){
+	glutInit(&argc, argv);
+
 	win3d.CreateGLUTWindow();
 	win3d.SetDraw(draw);
 	win3d.SetDrawAppend(print);

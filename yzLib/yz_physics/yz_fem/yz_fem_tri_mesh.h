@@ -16,6 +16,7 @@
 #include "yzLib/yz_geometry/yz_tri_mesh.h"
 #include "yzLib/yz_geometry/yz_mesh_topology.h"
 #include "yzLib/yz_physics/yz_physics_base.h"
+#include "yzLib/yz_physics/yz_bending_force.h"
 #ifdef yzLib_ENABLE_GLUT
 #	include "yzLib/yz_opengl/yz_opengl_utils.h"
 #	include "yzLib/yz_opengl/yz_vector_opengl_utils.h"
@@ -62,6 +63,8 @@ public:
 	using PointMass<T>::x;
 	using PointMass<T>::v;
 	using PointMass<T>::f;
+	using ImplicitPhysicsBase<T>::XTY;
+	using ImplicitPhysicsBase<T>::SVD3x2;
 
 public:
 	/**

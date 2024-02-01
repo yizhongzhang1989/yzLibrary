@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-#include <GL/glew.h>
-#include <GL/glut.h>
+// #include <GL/glew.h>
+// #include <GL/glut.h>
 #include <yzLib/yz_lib.h>
 using namespace std;
 
@@ -205,6 +205,8 @@ void special_keys_3d(int key, int x, int y){
 
 //	main function
 int main(int argc, char* argv[]){
+	glutInit(&argc, argv);
+
 	//	setup 3d mesh
 	mesh.vertex.resize(3);
 	mesh.vertex[0] = yz::Vec3f(1, 0, 0);

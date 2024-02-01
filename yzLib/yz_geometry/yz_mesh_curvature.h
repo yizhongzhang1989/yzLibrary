@@ -23,6 +23,7 @@
 namespace yz{	namespace geometry{
 //	declaration
 template<class T> class CurvTriMesh;
+template<typename T> inline int setTriMeshBoundaryDataAsNeighborAverage(T*, int, const int*, const int*, const int*);
 
 /**
 	curvature relatad parameter container

@@ -1,6 +1,6 @@
 #include <iostream>
-#include <GL/glew.h>
-#include <GL/glut.h>
+// #include <GL/glew.h>
+// #include <GL/glut.h>
 #include "yzLib/yz_lib.h"
 
 template <typename T>
@@ -316,7 +316,9 @@ void draw() {
 	//glEnd();
 }
 
-int main() {
+int main(int argc, char* argv[]){
+	glutInit(&argc, argv);
+
 	mesh.ReadMeshFromFile("non_ground.obj");
 
 	cluster_ptr = new PointCluster<double>(mesh.vertex);

@@ -305,12 +305,14 @@ int readMocapFromBVH(std::istream&			bvh,
 	\todo	implement this function
 */
 template<typename T>
-int writeMocapToBVH(std::ostream&			bvh,
-					Skeleton<T>*			skeleton		= NULL,
-					SkeletonMotionData<T>*	motion_data		= NULL,
-					double					meter_per_unit	= 1,
-					char					angle_unit		= 'd'){
-
+int writeMocapToBVH(
+	std::ostream&			bvh,
+	Skeleton<T>*			skeleton		= NULL,
+	SkeletonMotionData<T>*	motion_data		= NULL,
+	double					meter_per_unit	= 1,
+	char					angle_unit		= 'd'
+){
+	return 0;
 }
 /**
 	write skeleton to .bvh file

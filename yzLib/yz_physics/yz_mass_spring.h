@@ -29,6 +29,8 @@ class MassSpring :
 {
 public:
 	using ImplicitPhysicsBase<T>::gravity;
+	using ImplicitPhysicsBase<T>::XTY;
+	using ImplicitPhysicsBase<T>::EnforceSemiPositiveDefinite;
 	using PointMass<T>::M;
 	using PointMass<T>::x;
 	using PointMass<T>::v;

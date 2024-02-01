@@ -14,6 +14,7 @@
 #include <assert.h>
 #include <iostream>
 #include <math.h>
+#include <type_traits>
 #include "yzLib/yz_math/yz_math_setting.h"
 #include "yzLib/yz_math/yz_vector.h"
 #include "yzLib/yz_math/yz_numerical_utils.h"
@@ -1431,8 +1432,11 @@ public:
 		det = data[0][0] * inv[0] + data[0][1] * inv[4] + data[0][2] * inv[8] + data[0][3] * inv[12];
 
 		if( det != 0 ){
-			for (int i = 0; i < 16; i++)         
-				data[0][i] = inv[i] / det;
+			for (int i = 0; i < 4; i++) {  
+				for (int j = 0; j < 4; j++) {  
+					data[i][j] = inv[i*4 + j] / det;  
+				}  
+			}  
 		}
 		else{
 			std::cout << "not invertable" << std::endl;
@@ -2182,31 +2186,36 @@ public:
 /**	@name Non-member functions of Matrix
 */
 //	========================================
-template<typename TYPE, class T> inline Matrix2x2<TYPE_PROMOTE(T, TYPE)> operator * (const TYPE val, const Matrix2x2<T> mat){
-	Matrix2x2<TYPE_PROMOTE(T, TYPE)> result(mat);
-	result *= val;
-	return result;
-}
+template<typename TYPE, class T> inline typename std::enable_if<std::is_arithmetic<TYPE>::value, Matrix2x2<TYPE_PROMOTE(T, TYPE)>>::type
+operator * (const TYPE val, const Matrix2x2<T>& mat) {  
+    Matrix2x2<TYPE_PROMOTE(T, TYPE)> result(mat);  
+    result *= val;  
+    return result;  
+}  
 
-template<typename TYPE, class T> inline Matrix3x3<TYPE_PROMOTE(T, TYPE)> operator * (const TYPE val, const Matrix3x3<T> mat){
+template<typename TYPE, class T> inline typename std::enable_if<std::is_arithmetic<TYPE>::value, Matrix3x3<TYPE_PROMOTE(T, TYPE)>>::type
+operator * (const TYPE val, const Matrix3x3<T> mat){
 	Matrix3x3<TYPE_PROMOTE(T, TYPE)> result(mat);
 	result *= val;
 	return result;
 }
 
-template<typename TYPE, class T> inline Matrix4x4<TYPE_PROMOTE(T, TYPE)> operator * (const TYPE val, const Matrix4x4<T> mat){
+template<typename TYPE, class T> inline typename std::enable_if<std::is_arithmetic<TYPE>::value, Matrix4x4<TYPE_PROMOTE(T, TYPE)>>::type
+operator * (const TYPE val, const Matrix4x4<T> mat){
 	Matrix4x4<TYPE_PROMOTE(T, TYPE)> result(mat);
 	result *= val;
 	return result;
 }
 
-template<typename TYPE, class T> inline Matrix3x2<TYPE_PROMOTE(T, TYPE)> operator * (const TYPE val, const Matrix3x2<T> mat){
+template<typename TYPE, class T> inline typename std::enable_if<std::is_arithmetic<TYPE>::value, Matrix3x2<TYPE_PROMOTE(T, TYPE)>>::type
+operator * (const TYPE val, const Matrix3x2<T> mat){
 	Matrix3x2<TYPE_PROMOTE(T, TYPE)> result(mat);
 	result *= val;
 	return result;
 }
 
-template<typename TYPE, class T> inline Matrix2x3<TYPE_PROMOTE(T, TYPE)> operator * (const TYPE val, const Matrix2x3<T> mat){
+template<typename TYPE, class T> inline typename std::enable_if<std::is_arithmetic<TYPE>::value, Matrix2x3<TYPE_PROMOTE(T, TYPE)>>::type
+operator * (const TYPE val, const Matrix2x3<T> mat){
 	Matrix2x3<TYPE_PROMOTE(T, TYPE)> result(mat);
 	result *= val;
 	return result;

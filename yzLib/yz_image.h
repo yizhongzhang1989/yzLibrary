@@ -13,7 +13,7 @@
 
 #include "yzLib/yz_image/yz_image_rw.h"
 
-#include "yzlib/yz_image/yz_image_raster.h"
+#include "yzLib/yz_image/yz_image_raster.h"
 
 #pragma warning(pop)
 

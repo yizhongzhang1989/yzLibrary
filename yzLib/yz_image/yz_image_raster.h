@@ -10,7 +10,7 @@
 
 #include <queue>
 #include "yzLib/yz_geometry/yz_clipping.h"
-#include "yzlib/yz_utils/yz_ascii_table.h"
+#include "yzLib/yz_utils/yz_ascii_table.h"
 
 
 namespace yz {	namespace image {

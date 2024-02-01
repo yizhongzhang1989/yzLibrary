@@ -8,8 +8,8 @@
 
 #include <iostream>
 #include <queue>
-#include <GL/glew.h>
-#include <GL/glut.h>
+// #include <GL/glew.h>
+// #include <GL/glut.h>
 #include "yzLib/yz_lib.h"
 #include "data_path.h"
 
@@ -388,7 +388,9 @@ void keyboard_2d(unsigned char key, int x, int y) {
 	}
 }
 
-int main() {
+int main(int argc, char* argv[]){
+	glutInit(&argc, argv);
+
 	char obj_filename[1024];
 	sprintf(obj_filename, "%s/unit_icosphere.obj", data_path);
 
