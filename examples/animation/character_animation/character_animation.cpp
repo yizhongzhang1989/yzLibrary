@@ -12,8 +12,8 @@
 #	include <omp.h>
 #endif
 #include <iostream>
-#include <GL/glew.h>
-#include <GL/glut.h>
+// #include <GL/glew.h>
+// #include <GL/glut.h>
 #include <Eigen/Dense>
 #include <Eigen/Sparse>
 //#include <mkl_types.h>
@@ -99,7 +99,9 @@ void idle(){
 	}
 }
 
-int main(){
+int main(int argc, char* argv[]){
+	glutInit(&argc, argv);
+
 	char bvh_filename[1024], obj_filename[1024];
 	sprintf(bvh_filename, "%s/James_motion.bvh", data_path);
 	sprintf(obj_filename, "%s/James_simplify.obj", data_path);

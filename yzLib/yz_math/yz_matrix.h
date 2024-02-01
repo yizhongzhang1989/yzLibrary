@@ -1432,8 +1432,11 @@ public:
 		det = data[0][0] * inv[0] + data[0][1] * inv[4] + data[0][2] * inv[8] + data[0][3] * inv[12];
 
 		if( det != 0 ){
-			for (int i = 0; i < 16; i++)         
-				data[0][i] = inv[i] / det;
+			for (int i = 0; i < 4; i++) {  
+				for (int j = 0; j < 4; j++) {  
+					data[i][j] = inv[i*4 + j] / det;  
+				}  
+			}  
 		}
 		else{
 			std::cout << "not invertable" << std::endl;

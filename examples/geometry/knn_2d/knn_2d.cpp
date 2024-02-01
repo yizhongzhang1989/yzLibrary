@@ -1,6 +1,6 @@
 #include <iostream>
-#include <GL/glew.h>
-#include <GL/glut.h>
+// #include <GL/glew.h>
+// #include <GL/glut.h>
 #include "yzLib/yz_lib.h"
 
 

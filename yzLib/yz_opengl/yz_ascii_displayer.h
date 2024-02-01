@@ -17,7 +17,7 @@
 #include "GL/glut.h"
 
 #include "yzLib/yz_math/yz_vector.h"
-#include "yzlib/yz_utils/yz_ascii_table.h"
+#include "yzLib/yz_utils/yz_ascii_table.h"
 
 namespace yz{	namespace opengl{
 

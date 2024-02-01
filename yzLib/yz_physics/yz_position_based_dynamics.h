@@ -2,7 +2,7 @@
 /**	\file
 	\brief		Position Based Dynamics
 	\details	Implementation of the paper: Position based dynamics \n
-				Matthias M¨¹ller, Bruno Heidelberger, Marcus Hennix, John Ratcliff \n
+				Matthias Mï¿½ï¿½ller, Bruno Heidelberger, Marcus Hennix, John Ratcliff \n
 				3rd Workshop in Virtual Reality Interactions and Physical Simulation "VRIPHYS" (2006)
 	\author		Yizhong Zhang
 	\date		10/17/2012
@@ -48,6 +48,7 @@ class PositionBasedDynamicTriMesh :
 {
 public:
 	using PhysicsBase<T>::gravity;
+	using PhysicsBase<T>::SetGravity;
 	using PointMass<T>::M;
 	using PointMass<T>::x;
 	using PointMass<T>::v;

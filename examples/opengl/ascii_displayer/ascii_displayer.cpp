@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <GL/glew.h>
-#include <GL/glut.h>
+// #include <GL/glew.h>
+// #include <GL/glut.h>
 #include <yzLib/yz_lib.h>
 
 yz::opengl::DemoWindowManager	manager;
@@ -23,7 +23,9 @@ void draw(){
 	glEnable(GL_LIGHTING);
 }
 
-int main(){
+int main(int argc, char** argv){
+	glutInit(&argc, argv);
+	
 	win3d.CreateGLUTWindow();
 	win3d.SetDraw(draw);
 

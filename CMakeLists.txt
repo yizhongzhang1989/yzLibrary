@@ -47,11 +47,12 @@ include_directories(${yzLib_INCLUDE_DIRS})
 message(STATUS "==============================")
 
 if(${MSVC}) 
-	# ---------- yzLibraryDeps ----------
 	if(NOT EXISTS ${CMAKE_SOURCE_DIR}/deps/inc)
+		# yzLibraryDeps not found, only basic examples
 		message(WARNING "deps not found, only basic examples. Update submodule yzLibraryDeps to release examples with GUI.")
 	else()
-		message(STATUS "yzLibraryDeps found as submodule")
+		# yzLibraryDeps found, enable features inside yzLibraryDeps
+		message(STATUS "yzLibraryDeps found as submodule, enable GLUT, GLEW, FreeImage, and Windows API")
 
 		yzLib_set_ENABLE(GLUT ON)
 		yzLib_set_ENABLE(GLEW ON)
@@ -59,9 +60,15 @@ if(${MSVC})
 		yzLib_set_ENABLE(WINDOWS ON)
 
 		include_directories(${CMAKE_SOURCE_DIR}/deps/inc)
-		if(${MSVC}) 
-			set(BIN_PATH "${CMAKE_SOURCE_DIR}/deps/bin/win64;${CMAKE_SOURCE_DIR}/deps/bin/win32")
-		endif()
+		set(BIN_PATH "${CMAKE_SOURCE_DIR}/deps/bin/win64;${CMAKE_SOURCE_DIR}/deps/bin/win32")
+	endif()
+elseif(${UNIX})
+	find_package(OpenGL QUIET)
+	if(OpenGL_FOUND)
+		message(STATUS "OpenGL found")
+		yzLib_set_ENABLE(GLUT ON)
+	else()
+		message(WARNING "OpenGL not found, try \n\tsudo apt install libglu1-mesa-dev freeglut3-dev mesa-common-dev")
 	endif()
 endif()
 

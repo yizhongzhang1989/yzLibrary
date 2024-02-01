@@ -1,6 +1,6 @@
 #include <iostream>
-#include <GL/glew.h>
-#include <GL/glut.h>
+// #include <GL/glew.h>
+// #include <GL/glut.h>
 #include <yzLib/yz_lib.h>
 #include "data_path.h"
 
@@ -14,6 +14,11 @@ namespace yz{
 */
 template<class T>
 class FEMTriMesh : public geometry::TriMesh2D<T>{
+public:
+	using geometry::TriMesh2D<T>::vertex;
+	using geometry::TriMesh2D<T>::face;
+	using geometry::TriMesh2D<T>::Display;
+
 public:
 	void Draw(){
 		glColor3f(0, 0, 1);
