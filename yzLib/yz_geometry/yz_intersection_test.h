@@ -1467,7 +1467,7 @@ inline int getRayAABBIntersectPoint(Vec2<T>& intersection_point,
 
 	bool inside = true;
 	char quadrant[2];
-	register int i;
+	int i;
 	int whichPlane;
 	T maxT[2];
 	T candidatePlane[2];
@@ -1554,7 +1554,7 @@ inline int getRayAABBIntersectPoint(Vec3<T>& intersection_point,
 
 	bool inside = true;
 	char quadrant[3];
-	register int i;
+	int i;
 	int whichPlane;
 	T maxT[3];
 	T candidatePlane[3];

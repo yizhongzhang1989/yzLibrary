@@ -275,7 +275,7 @@ public:
 	/**
 		Set Window Title
 	*/
-	inline void SetWindowTitle(char* window_title){
+	inline void SetWindowTitle(const char* window_title){
 		glutSetWindow(win_id);
 		glutSetWindowTitle(window_title);
 	}

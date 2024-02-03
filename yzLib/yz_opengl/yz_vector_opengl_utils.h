@@ -39,6 +39,8 @@ template<typename T1, typename T2>
 inline void drawLineSegment(Com3<T1> v0, Com3<T2> v1);
 template<typename T1, typename T2>
 inline void drawCylinder(Com3<T1> v0, Com3<T2> v1, float radius, int slices = 4);
+template<typename T>
+inline void drawCircle(Com2<T> center, float radius, int slices = 32);
 
 //	========================================
 ///@{
@@ -575,7 +577,7 @@ inline void drawWholeTexture(Com2<T1> min_coord, Com2<T1> max_coord, int flip_fl
 	\param	slices		slices is the circle divided
 */
 template<typename T>
-inline void drawCircle(Com2<T> center, float radius, int slices = 32){
+inline void drawCircle(Com2<T> center, float radius, int slices){
 	glBegin(GL_LINE_LOOP);
 		for( int i=0; i<slices; i++ ){
 			Vec2f r(radius, 0);
