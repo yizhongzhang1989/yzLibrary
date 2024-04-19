@@ -10,7 +10,7 @@
 
 #ifdef _MSC_VER
 #	include <io.h>
-#else
+#elif defined(__x86_64__)
 #	include <sys/io.h>
 #endif
 
